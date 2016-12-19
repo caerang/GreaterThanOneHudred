@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267071E081C17005A9EEB /* AppDelegate.swift */; };
+		DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267091E081C17005A9EEB /* ViewController.swift */; };
+		DB72670D1E081C17005A9EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB72670B1E081C17005A9EEB /* Main.storyboard */; };
+		DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */; };
+		DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7267111E081C17005A9EEB /* Assets.xcassets */; };
+		DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB7267041E081C17005A9EEB /* GreaterThanOneHudred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreaterThanOneHudred.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7267071E081C17005A9EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB7267091E081C17005A9EEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB72670C1E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB72670F1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GreaterThanOneHudred.xcdatamodel; sourceTree = "<group>"; };
+		DB7267111E081C17005A9EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB7267141E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB7267161E081C17005A9EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB7267011E081C17005A9EEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB7266FB1E081C17005A9EEB = {
+			isa = PBXGroup;
+			children = (
+				DB7267061E081C17005A9EEB /* GreaterThanOneHudred */,
+				DB7267051E081C17005A9EEB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB7267051E081C17005A9EEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB7267041E081C17005A9EEB /* GreaterThanOneHudred.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB7267061E081C17005A9EEB /* GreaterThanOneHudred */ = {
+			isa = PBXGroup;
+			children = (
+				DB7267071E081C17005A9EEB /* AppDelegate.swift */,
+				DB7267091E081C17005A9EEB /* ViewController.swift */,
+				DB72670B1E081C17005A9EEB /* Main.storyboard */,
+				DB7267111E081C17005A9EEB /* Assets.xcassets */,
+				DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */,
+				DB7267161E081C17005A9EEB /* Info.plist */,
+				DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */,
+			);
+			path = GreaterThanOneHudred;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB7267031E081C17005A9EEB /* GreaterThanOneHudred */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHudred" */;
+			buildPhases = (
+				DB7267001E081C17005A9EEB /* Sources */,
+				DB7267011E081C17005A9EEB /* Frameworks */,
+				DB7267021E081C17005A9EEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreaterThanOneHudred;
+			productName = GreaterThanOneHudred;
+			productReference = DB7267041E081C17005A9EEB /* GreaterThanOneHudred.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB7266FC1E081C17005A9EEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = dreamFactory;
+				TargetAttributes = {
+					DB7267031E081C17005A9EEB = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = R7SH5ZSTD9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DB7266FF1E081C17005A9EEB /* Build configuration list for PBXProject "GreaterThanOneHudred" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB7266FB1E081C17005A9EEB;
+			productRefGroup = DB7267051E081C17005A9EEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB7267031E081C17005A9EEB /* GreaterThanOneHudred */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB7267021E081C17005A9EEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */,
+				DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */,
+				DB72670D1E081C17005A9EEB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB7267001E081C17005A9EEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */,
+				DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */,
+				DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB72670B1E081C17005A9EEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB72670C1E081C17005A9EEB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB7267141E081C17005A9EEB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB7267171E081C17005A9EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB7267181E081C17005A9EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB72671A1E081C17005A9EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R7SH5ZSTD9;
+				INFOPLIST_FILE = GreaterThanOneHudred/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHudred;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DB72671B1E081C17005A9EEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R7SH5ZSTD9;
+				INFOPLIST_FILE = GreaterThanOneHudred/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHudred;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB7266FF1E081C17005A9EEB /* Build configuration list for PBXProject "GreaterThanOneHudred" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB7267171E081C17005A9EEB /* Debug */,
+				DB7267181E081C17005A9EEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHudred" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB72671A1E081C17005A9EEB /* Debug */,
+				DB72671B1E081C17005A9EEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB72670F1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodel */,
+			);
+			currentVersion = DB72670F1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodel */;
+			path = GreaterThanOneHudred.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DB7266FC1E081C17005A9EEB /* Project object */;
+}

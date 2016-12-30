@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  GreaterThanOneHudred
 //
-//  Created by Han Moi Kim on 2016. 12. 19..
+//  Created by Hanmoi Kim on 2016. 12. 19..
 //  Copyright © 2016년 dreamFactory. All rights reserved.
 //
 

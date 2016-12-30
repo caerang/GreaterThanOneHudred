@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ib0-Bz-msj">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,31 +10,63 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="awc-jb-1z8">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="Ib0-Bz-msj" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="he8-op-A3B"/>
+                        <viewControllerLayoutGuide type="bottom" id="4xB-6I-W9c"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="MUK-Fg-XxJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchBg" translatesAutoresizingMaskIntoConstraints="NO" id="JdY-Cg-aeL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_title" translatesAutoresizingMaskIntoConstraints="NO" id="FyG-Hd-VYE">
+                                <rect key="frame" x="67" y="247" width="240" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Rt1-W5-vFu"/>
+                                    <constraint firstAttribute="height" constant="100" id="et9-GM-2PH"/>
+                                </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ECX-vb-vl2">
+                                <rect key="frame" x="67" y="369" width="240" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="hXR-Cj-Zdw"/>
+                                    <constraint firstAttribute="width" constant="240" id="yJJ-3F-p0N"/>
+                                </constraints>
+                                <string key="text">Build an your upright characterby clipping significant sentencefrom a book.</string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ⓒ Greater than hundred. co ltd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5e1-5Z-Ny5">
+                                <rect key="frame" x="112" y="613" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dsb-oS-BI3"/>
+                                    <constraint firstAttribute="width" constant="150" id="iXb-yk-vg2"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.87058823529411766" green="0.11764705882352941" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.1176470588" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ECX-vb-vl2" firstAttribute="top" secondItem="FyG-Hd-VYE" secondAttribute="bottom" constant="22" id="BO0-T0-hbp"/>
+                            <constraint firstItem="5e1-5Z-Ny5" firstAttribute="centerX" secondItem="MUK-Fg-XxJ" secondAttribute="centerX" id="BUy-a4-isj"/>
+                            <constraint firstItem="4xB-6I-W9c" firstAttribute="top" secondItem="5e1-5Z-Ny5" secondAttribute="bottom" constant="24" id="LTG-dg-oa8"/>
+                            <constraint firstItem="FyG-Hd-VYE" firstAttribute="centerX" secondItem="MUK-Fg-XxJ" secondAttribute="centerX" id="RYq-Bl-e1Y"/>
+                            <constraint firstItem="FyG-Hd-VYE" firstAttribute="top" secondItem="he8-op-A3B" secondAttribute="bottom" constant="227" id="cBK-Db-rg0"/>
+                            <constraint firstItem="ECX-vb-vl2" firstAttribute="centerX" secondItem="MUK-Fg-XxJ" secondAttribute="centerX" id="tix-L5-eYk"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bM2-J8-Zv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="launchBg" width="750" height="1334"/>
+        <image name="img_title" width="221" height="81"/>
     </resources>
 </document>

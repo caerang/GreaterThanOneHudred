@@ -40,13 +40,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ⓒ Greater than hundred. co ltd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5e1-5Z-Ny5">
-                                <rect key="frame" x="112" y="613" width="150" height="30"/>
+                                <rect key="frame" x="112" y="634" width="150" height="9"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Dsb-oS-BI3"/>
+                                    <constraint firstAttribute="height" constant="9" id="Dsb-oS-BI3"/>
                                     <constraint firstAttribute="width" constant="150" id="iXb-yk-vg2"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>

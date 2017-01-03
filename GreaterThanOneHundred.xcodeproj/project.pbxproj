@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */; };
+		DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */; };
+		DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */; };
 		DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267071E081C17005A9EEB /* AppDelegate.swift */; };
 		DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267091E081C17005A9EEB /* ViewController.swift */; };
 		DB72670D1E081C17005A9EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB72670B1E081C17005A9EEB /* Main.storyboard */; };
@@ -16,7 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB7267041E081C17005A9EEB /* GreaterThanOneHudred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreaterThanOneHudred.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLine.swift; sourceTree = "<group>"; };
+		DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLineProtocol.swift; sourceTree = "<group>"; };
+		DB7267041E081C17005A9EEB /* GreaterThanOneHundred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreaterThanOneHundred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7267071E081C17005A9EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB7267091E081C17005A9EEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB72670C1E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,6 +43,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB2FF5261E19EA33005215C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DB2FF5271E1A40C3005215C1 /* CustomControl */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */,
+			);
+			name = CustomControl;
+			sourceTree = "<group>";
+		};
+		DB2FF52A1E1A4EC9005215C1 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		DB2FF52D1E1A943E005215C1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		DB7266FB1E081C17005A9EEB = {
 			isa = PBXGroup;
 			children = (
@@ -48,7 +85,7 @@
 		DB7267051E081C17005A9EEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB7267041E081C17005A9EEB /* GreaterThanOneHudred.app */,
+				DB7267041E081C17005A9EEB /* GreaterThanOneHundred.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +93,10 @@
 		DB7267061E081C17005A9EEB /* GreaterThanOneHudred */ = {
 			isa = PBXGroup;
 			children = (
+				DB2FF52D1E1A943E005215C1 /* Common */,
+				DB2FF52A1E1A4EC9005215C1 /* Control */,
+				DB2FF5271E1A40C3005215C1 /* CustomControl */,
+				DB2FF5261E19EA33005215C1 /* View */,
 				DB7267071E081C17005A9EEB /* AppDelegate.swift */,
 				DB7267091E081C17005A9EEB /* ViewController.swift */,
 				DB72670B1E081C17005A9EEB /* Main.storyboard */,
@@ -70,9 +111,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB7267031E081C17005A9EEB /* GreaterThanOneHudred */ = {
+		DB7267031E081C17005A9EEB /* GreaterThanOneHundred */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHudred" */;
+			buildConfigurationList = DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHundred" */;
 			buildPhases = (
 				DB7267001E081C17005A9EEB /* Sources */,
 				DB7267011E081C17005A9EEB /* Frameworks */,
@@ -82,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = GreaterThanOneHudred;
+			name = GreaterThanOneHundred;
 			productName = GreaterThanOneHudred;
-			productReference = DB7267041E081C17005A9EEB /* GreaterThanOneHudred.app */;
+			productReference = DB7267041E081C17005A9EEB /* GreaterThanOneHundred.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB7266FF1E081C17005A9EEB /* Build configuration list for PBXProject "GreaterThanOneHudred" */;
+			buildConfigurationList = DB7266FF1E081C17005A9EEB /* Build configuration list for PBXProject "GreaterThanOneHundred" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB7267031E081C17005A9EEB /* GreaterThanOneHudred */,
+				DB7267031E081C17005A9EEB /* GreaterThanOneHundred */,
 			);
 		};
 /* End PBXProject section */
@@ -141,8 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */,
+				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
 				DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */,
 				DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */,
+				DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */,
+				DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +310,7 @@
 				DEVELOPMENT_TEAM = R7SH5ZSTD9;
 				INFOPLIST_FILE = GreaterThanOneHudred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHudred;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHundred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -279,7 +323,7 @@
 				DEVELOPMENT_TEAM = R7SH5ZSTD9;
 				INFOPLIST_FILE = GreaterThanOneHudred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHudred;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHundred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -288,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB7266FF1E081C17005A9EEB /* Build configuration list for PBXProject "GreaterThanOneHudred" */ = {
+		DB7266FF1E081C17005A9EEB /* Build configuration list for PBXProject "GreaterThanOneHundred" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB7267171E081C17005A9EEB /* Debug */,
@@ -297,13 +341,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHudred" */ = {
+		DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHundred" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB72671A1E081C17005A9EEB /* Debug */,
 				DB72671B1E081C17005A9EEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DB7267031E081C17005A9EEB"
-               BuildableName = "GreaterThanOneHudred.app"
-               BlueprintName = "GreaterThanOneHudred"
-               ReferencedContainer = "container:GreaterThanOneHudred.xcodeproj">
+               BuildableName = "GreaterThanOneHundred.app"
+               BlueprintName = "GreaterThanOneHundred"
+               ReferencedContainer = "container:GreaterThanOneHundred.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB7267031E081C17005A9EEB"
-            BuildableName = "GreaterThanOneHudred.app"
-            BlueprintName = "GreaterThanOneHudred"
-            ReferencedContainer = "container:GreaterThanOneHudred.xcodeproj">
+            BuildableName = "GreaterThanOneHundred.app"
+            BlueprintName = "GreaterThanOneHundred"
+            ReferencedContainer = "container:GreaterThanOneHundred.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB7267031E081C17005A9EEB"
-            BuildableName = "GreaterThanOneHudred.app"
-            BlueprintName = "GreaterThanOneHudred"
-            ReferencedContainer = "container:GreaterThanOneHudred.xcodeproj">
+            BuildableName = "GreaterThanOneHundred.app"
+            BlueprintName = "GreaterThanOneHundred"
+            ReferencedContainer = "container:GreaterThanOneHundred.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB7267031E081C17005A9EEB"
-            BuildableName = "GreaterThanOneHudred.app"
-            BlueprintName = "GreaterThanOneHudred"
-            ReferencedContainer = "container:GreaterThanOneHudred.xcodeproj">
+            BuildableName = "GreaterThanOneHundred.app"
+            BlueprintName = "GreaterThanOneHundred"
+            ReferencedContainer = "container:GreaterThanOneHundred.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,24 +1,20 @@
 //
-//  SignUpPageViewControl.swift
-//  GreaterThanOneHudred
+//  LogInPageViewController.swift
+//  GreaterThanOneHundred
 //
-//  Created by stonecoldjuice on 2017. 1. 2..
+//  Created by stonecoldjuice on 2017. 1. 3..
 //  Copyright © 2017년 dreamFactory. All rights reserved.
 //
 
 import UIKit
 
-class SignUpPageViewController : UIViewController, UITextFieldDelegate {
+class LoginPageViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
     @IBOutlet weak var passwordTextField: UITextFieldSingleLine!
-    @IBOutlet weak var userNameTextField: UITextFieldSingleLine!
-    @IBOutlet weak var nationalityTextField: UITextFieldSingleLine!
     
     override func viewDidLoad() {
         self.eMailTextField.delegate = self
         self.passwordTextField.delegate = self
-        self.userNameTextField.delegate = self
-        self.nationalityTextField.delegate = self
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -34,7 +30,28 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if self.eMailTextField == textField {
+            self.passwordTextField.becomeFirstResponder()
+        } else if self.passwordTextField == textField {
+            if let eMail = self.eMailTextField.text, let pwd = self.passwordTextField.text {
+                if login(id: eMail, password: pwd) {
+                    windToBoardPage()
+                }
+            }
+        }
         return true
     }
+    
+    func login(id: String, password: String) -> Bool {
+        return true
+    }
+    
+    func windToBoardPage() {
+        self.performSegue(withIdentifier: "WindToBoardPage", sender: self)
+    }
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        windToBoardPage()
+    }
+
 }

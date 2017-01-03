@@ -69,7 +69,7 @@ class UITextFieldSingleLine: UITextField, UITextFieldSingleLineProtocol {
     override func awakeFromNib() {
         self.borderStyle = .none
         self.textColor = UIColor(colorLiteralRed: 255.0, green: 255.0, blue: 255.0, alpha: 1.0)
-
+        
         setBottomLine()
     }
     

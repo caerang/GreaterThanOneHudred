@@ -16,6 +16,8 @@
 		DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */; };
 		DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7267111E081C17005A9EEB /* Assets.xcassets */; };
 		DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */; };
+		DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */; };
+		DBBCC4211E1BE58800868DC9 /* LoginInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		DB7267111E081C17005A9EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB7267141E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7267161E081C17005A9EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
+		DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInfoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
+				DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -95,8 +100,9 @@
 			children = (
 				DB2FF52D1E1A943E005215C1 /* Common */,
 				DB2FF52A1E1A4EC9005215C1 /* Control */,
-				DB2FF5271E1A40C3005215C1 /* CustomControl */,
+				DBBCC41F1E1BE30F00868DC9 /* Model */,
 				DB2FF5261E19EA33005215C1 /* View */,
+				DB2FF5271E1A40C3005215C1 /* CustomControl */,
 				DB7267071E081C17005A9EEB /* AppDelegate.swift */,
 				DB7267091E081C17005A9EEB /* ViewController.swift */,
 				DB72670B1E081C17005A9EEB /* Main.storyboard */,
@@ -106,6 +112,14 @@
 				DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */,
 			);
 			path = GreaterThanOneHudred;
+			sourceTree = "<group>";
+		};
+		DBBCC41F1E1BE30F00868DC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,10 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */,
+				DBBCC4211E1BE58800868DC9 /* LoginInfoManager.swift in Sources */,
 				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
 				DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */,
 				DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */,
 				DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */,
+				DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */,
 				DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

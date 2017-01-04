@@ -33,13 +33,25 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
         if self.eMailTextField == textField {
             self.passwordTextField.becomeFirstResponder()
         } else if self.passwordTextField == textField {
-            if let eMail = self.eMailTextField.text, let pwd = self.passwordTextField.text {
-                if login(id: eMail, password: pwd) {
-                    windToBoardPage()
-                }
+            if beginLogin() {
+                windToBoardPage()
             }
         }
         return true
+    }
+    
+    func beginLogin() -> Bool {
+        if let eMail = self.eMailTextField.text, let pwd = self.passwordTextField.text {
+            if login(id: eMail, password: pwd) {
+                if LoginInfoManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
+                    return true
+                }
+                
+                return false
+            }
+        }
+        
+        return false
     }
     
     func login(id: String, password: String) -> Bool {
@@ -47,11 +59,13 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
     }
     
     func windToBoardPage() {
-        self.performSegue(withIdentifier: "WindToBoardPage", sender: self)
+        self.performSegue(withIdentifier: "windFromLoginToBoardPage", sender: self)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        windToBoardPage()
+        if beginLogin() {
+            windToBoardPage()
+        }
     }
 
 }

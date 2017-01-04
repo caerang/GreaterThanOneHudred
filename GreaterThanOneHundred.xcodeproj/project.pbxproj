@@ -18,6 +18,9 @@
 		DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */; };
 		DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */; };
 		DBBCC4211E1BE58800868DC9 /* LoginInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */; };
+		DBBCC4281E1CD49B00868DC9 /* BoardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */; };
+		DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */; };
+		DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,10 @@
 		DB7267161E081C17005A9EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInfoManager.swift; sourceTree = "<group>"; };
+		DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPageViewController.swift; sourceTree = "<group>"; };
+		DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		DBBCC4301E1CDB4500868DC9 /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKeychainWrapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,7 @@
 			children = (
 				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
 				DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */,
+				DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 				DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */,
 				DB7267161E081C17005A9EEB /* Info.plist */,
 				DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */,
+				DBBCC4221E1CD06400868DC9 /* Util */,
 			);
 			path = GreaterThanOneHudred;
 			sourceTree = "<group>";
@@ -120,6 +129,24 @@
 				DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		DBBCC4221E1CD06400868DC9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DBBCC42B1E1CDAEC00868DC9 /* SwiftKeychainWrapper */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		DBBCC42B1E1CDAEC00868DC9 /* SwiftKeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */,
+				DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */,
+				DBBCC4301E1CDB4500868DC9 /* SwiftKeychainWrapper.h */,
+			);
+			name = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +225,9 @@
 				DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */,
 				DBBCC4211E1BE58800868DC9 /* LoginInfoManager.swift in Sources */,
 				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
+				DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */,
+				DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */,
+				DBBCC4281E1CD49B00868DC9 /* BoardPageViewController.swift in Sources */,
 				DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */,
 				DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */,
 				DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */,

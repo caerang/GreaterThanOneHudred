@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56456893825BD4F70D766E1B /* Pods_GreaterThanOneHundred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F39AB6C08B03DF447551E2 /* Pods_GreaterThanOneHundred.framework */; };
 		DB2BC4FC1E1E1DB7008D51E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2BC4FB1E1E1DB7008D51E7 /* GoogleService-Info.plist */; };
+		DB2BC5001E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BC4FF1E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift */; };
 		DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */; };
 		DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */; };
 		DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */; };
@@ -30,6 +31,7 @@
 		79A81F89CD79DCFE2FC68854 /* Pods-GreaterThanOneHundred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreaterThanOneHundred.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreaterThanOneHundred/Pods-GreaterThanOneHundred.release.xcconfig"; sourceTree = "<group>"; };
 		D0F39AB6C08B03DF447551E2 /* Pods_GreaterThanOneHundred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreaterThanOneHundred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2BC4FB1E1E1DB7008D51E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB2BC4FF1E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestUserInfoPageViewController.swift; sourceTree = "<group>"; };
 		DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLine.swift; sourceTree = "<group>"; };
 		DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLineProtocol.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
 				DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */,
 				DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */,
+				DB2BC4FF1E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */,
 				DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */,
 				DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */,
+				DB2BC5001E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift in Sources */,
 				DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

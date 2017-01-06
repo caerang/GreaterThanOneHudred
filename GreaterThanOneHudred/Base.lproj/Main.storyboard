@@ -303,6 +303,9 @@ from a book.</string>
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tPy-Zb-lPu" kind="presentation" id="lpa-bL-atI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.11764705882352941" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -332,6 +335,92 @@ from a book.</string>
                 <exit id="Z7j-30-hNA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1639" y="38"/>
+        </scene>
+        <!--Request User Info Page View Controller-->
+        <scene sceneID="Xl6-XW-TPp">
+            <objects>
+                <viewController id="tPy-Zb-lPu" customClass="RequestUserInfoPageViewController" customModule="GreaterThanOneHundred" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M3x-eo-fpg"/>
+                        <viewControllerLayoutGuide type="bottom" id="eRe-p6-MsU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OSe-v0-h7H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-ox-0bM">
+                                <rect key="frame" x="24" y="51.5" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="9Eh-MV-4JH"/>
+                                    <constraint firstAttribute="height" constant="22" id="Zp1-Hk-BZk"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="hjI-Go-RMX" kind="unwind" unwindAction="unwindToLoginPage:" id="eO9-Ii-mHg"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2g-yw-ah3" customClass="UITextFieldSingleLine" customModule="GreaterThanOneHundred" customModuleProvider="target">
+                                <rect key="frame" x="65" y="200" width="245" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P7n-f7-nim"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozM-Ua-Dj2">
+                                <rect key="frame" x="65" y="243.5" width="245" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xni-ky-Nt4"/>
+                                </constraints>
+                                <state key="normal" title="Are you remember password?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hjI-Go-RMX" kind="unwind" unwindAction="unwindToLoginPage:" id="9nu-5M-Cx8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zI7-jb-h05">
+                                <rect key="frame" x="303" y="47" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5a0-sr-HTe"/>
+                                    <constraint firstAttribute="height" constant="30" id="hrM-NO-qIm"/>
+                                </constraints>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="tPy-Zb-lPu" eventType="touchUpInside" id="sf9-zj-NbP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.11764705882352941" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ozM-Ua-Dj2" secondAttribute="trailing" constant="49" id="5oP-vd-pzV"/>
+                            <constraint firstItem="g2g-yw-ah3" firstAttribute="leading" secondItem="OSe-v0-h7H" secondAttribute="leadingMargin" constant="49" id="L40-ps-xHm"/>
+                            <constraint firstItem="lGx-ox-0bM" firstAttribute="top" secondItem="M3x-eo-fpg" secondAttribute="bottom" constant="31.5" id="SKr-Of-6Of"/>
+                            <constraint firstItem="ozM-Ua-Dj2" firstAttribute="top" secondItem="g2g-yw-ah3" secondAttribute="bottom" constant="13.5" id="VNd-O1-yVq"/>
+                            <constraint firstItem="g2g-yw-ah3" firstAttribute="top" secondItem="M3x-eo-fpg" secondAttribute="bottom" constant="180" id="Xcv-BT-FOc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2g-yw-ah3" secondAttribute="trailing" constant="49" id="dgM-jz-lB9"/>
+                            <constraint firstItem="zI7-jb-h05" firstAttribute="centerY" secondItem="lGx-ox-0bM" secondAttribute="centerY" id="jdb-pY-Hsz"/>
+                            <constraint firstItem="ozM-Ua-Dj2" firstAttribute="leading" secondItem="OSe-v0-h7H" secondAttribute="leadingMargin" constant="49" id="qMN-mv-GKu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zI7-jb-h05" secondAttribute="trailing" constant="10" id="upS-mz-lJ6"/>
+                            <constraint firstItem="lGx-ox-0bM" firstAttribute="leading" secondItem="OSe-v0-h7H" secondAttribute="leadingMargin" constant="8" id="w8f-g7-cLf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="eMailTextField" destination="g2g-yw-ah3" id="nVb-4a-DQV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45F-tE-efe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hjI-Go-RMX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2438" y="38"/>
         </scene>
         <!--Board Page View Controller-->
         <scene sceneID="8X4-a4-2lI">

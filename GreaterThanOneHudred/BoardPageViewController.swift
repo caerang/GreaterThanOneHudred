@@ -11,6 +11,6 @@ import UIKit
 class BoardPageViewController : UIViewController {
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        LoginInfoManager.sharedInstance.removeLoginInfo()
+        LoginManager.sharedInstance.logout()
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56456893825BD4F70D766E1B /* Pods_GreaterThanOneHundred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F39AB6C08B03DF447551E2 /* Pods_GreaterThanOneHundred.framework */; };
+		DB2BC4FC1E1E1DB7008D51E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2BC4FB1E1E1DB7008D51E7 /* GoogleService-Info.plist */; };
 		DB2FF5291E1A4110005215C1 /* UITextFieldSingleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */; };
 		DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */; };
 		DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */; };
@@ -17,13 +19,17 @@
 		DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7267111E081C17005A9EEB /* Assets.xcassets */; };
 		DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */; };
 		DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */; };
-		DBBCC4211E1BE58800868DC9 /* LoginInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */; };
+		DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginManager.swift */; };
 		DBBCC4281E1CD49B00868DC9 /* BoardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */; };
 		DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */; };
 		DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		117AC6154F4EC92374692C2D /* Pods-GreaterThanOneHundred.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreaterThanOneHundred.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreaterThanOneHundred/Pods-GreaterThanOneHundred.debug.xcconfig"; sourceTree = "<group>"; };
+		79A81F89CD79DCFE2FC68854 /* Pods-GreaterThanOneHundred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreaterThanOneHundred.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreaterThanOneHundred/Pods-GreaterThanOneHundred.release.xcconfig"; sourceTree = "<group>"; };
+		D0F39AB6C08B03DF447551E2 /* Pods_GreaterThanOneHundred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreaterThanOneHundred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2BC4FB1E1E1DB7008D51E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB2FF5281E1A4110005215C1 /* UITextFieldSingleLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLine.swift; sourceTree = "<group>"; };
 		DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLineProtocol.swift; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		DB7267141E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7267161E081C17005A9EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
-		DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInfoManager.swift; sourceTree = "<group>"; };
+		DBBCC4201E1BE58800868DC9 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPageViewController.swift; sourceTree = "<group>"; };
 		DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -48,12 +54,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56456893825BD4F70D766E1B /* Pods_GreaterThanOneHundred.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		168C24284B9377C5FCCBDB28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				117AC6154F4EC92374692C2D /* Pods-GreaterThanOneHundred.debug.xcconfig */,
+				79A81F89CD79DCFE2FC68854 /* Pods-GreaterThanOneHundred.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6577D21E5AA7AFCC882C322A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0F39AB6C08B03DF447551E2 /* Pods_GreaterThanOneHundred.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB2FF5261E19EA33005215C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +116,8 @@
 			children = (
 				DB7267061E081C17005A9EEB /* GreaterThanOneHudred */,
 				DB7267051E081C17005A9EEB /* Products */,
+				168C24284B9377C5FCCBDB28 /* Pods */,
+				6577D21E5AA7AFCC882C322A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +145,7 @@
 				DB7267161E081C17005A9EEB /* Info.plist */,
 				DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */,
 				DBBCC4221E1CD06400868DC9 /* Util */,
+				DB2BC4FB1E1E1DB7008D51E7 /* GoogleService-Info.plist */,
 			);
 			path = GreaterThanOneHudred;
 			sourceTree = "<group>";
@@ -126,7 +153,7 @@
 		DBBCC41F1E1BE30F00868DC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DBBCC4201E1BE58800868DC9 /* LoginInfoManager.swift */,
+				DBBCC4201E1BE58800868DC9 /* LoginManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -156,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB7267191E081C17005A9EEB /* Build configuration list for PBXNativeTarget "GreaterThanOneHundred" */;
 			buildPhases = (
+				41CC0D602E03C74B7E411B7C /* [CP] Check Pods Manifest.lock */,
 				DB7267001E081C17005A9EEB /* Sources */,
 				DB7267011E081C17005A9EEB /* Frameworks */,
 				DB7267021E081C17005A9EEB /* Resources */,
+				B112A8527E147B079C9DD583 /* [CP] Embed Pods Frameworks */,
+				8B4E2F39F7731CAC809221F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */,
+				DB2BC4FC1E1E1DB7008D51E7 /* GoogleService-Info.plist in Resources */,
 				DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */,
 				DB72670D1E081C17005A9EEB /* Main.storyboard in Resources */,
 			);
@@ -217,13 +248,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41CC0D602E03C74B7E411B7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B4E2F39F7731CAC809221F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreaterThanOneHundred/Pods-GreaterThanOneHundred-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B112A8527E147B079C9DD583 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreaterThanOneHundred/Pods-GreaterThanOneHundred-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB7267001E081C17005A9EEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */,
-				DBBCC4211E1BE58800868DC9 /* LoginInfoManager.swift in Sources */,
+				DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */,
 				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
 				DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */,
 				DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */,
@@ -351,10 +430,12 @@
 		};
 		DB72671A1E081C17005A9EEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 117AC6154F4EC92374692C2D /* Pods-GreaterThanOneHundred.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R7SH5ZSTD9;
 				INFOPLIST_FILE = GreaterThanOneHudred/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHundred;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,10 +445,12 @@
 		};
 		DB72671B1E081C17005A9EEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79A81F89CD79DCFE2FC68854 /* Pods-GreaterThanOneHundred.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R7SH5ZSTD9;
 				INFOPLIST_FILE = GreaterThanOneHudred/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamFactory.GreaterThanOneHundred;
 				PRODUCT_NAME = "$(TARGET_NAME)";

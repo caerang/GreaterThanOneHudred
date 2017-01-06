@@ -194,6 +194,7 @@ from a book.</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonPressed:" destination="5qm-bM-IRg" eventType="touchUpInside" id="i5t-Fu-OiN"/>
                                     <segue destination="0G5-Xe-H71" kind="presentation" id="Jqc-T6-0V9"/>
                                 </connections>
                             </button>

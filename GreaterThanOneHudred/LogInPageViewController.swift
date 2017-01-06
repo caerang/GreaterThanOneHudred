@@ -42,8 +42,8 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
     
     func beginLogin() -> Bool {
         if let eMail = self.eMailTextField.text, let pwd = self.passwordTextField.text {
-            if login(id: eMail, password: pwd) {
-                if LoginInfoManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
+            if LoginManager.sharedInstance.login(id: eMail, password: pwd) {
+                if LoginManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
                     return true
                 }
                 
@@ -52,10 +52,6 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
         }
         
         return false
-    }
-    
-    func login(id: String, password: String) -> Bool {
-        return true
     }
     
     func windToBoardPage() {

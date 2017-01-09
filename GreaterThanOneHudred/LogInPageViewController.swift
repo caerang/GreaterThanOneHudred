@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginPageViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
     @IBOutlet weak var passwordTextField: UITextFieldSingleLine!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         self.eMailTextField.delegate = self
         self.passwordTextField.delegate = self
     }
@@ -33,35 +36,32 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
         if self.eMailTextField == textField {
             self.passwordTextField.becomeFirstResponder()
         } else if self.passwordTextField == textField {
-            if beginLogin() {
-                windToBoardPage()
-            }
+            self.beginLogin()
         }
         return true
     }
     
-    func beginLogin() -> Bool {
+    func beginLogin() {
         if let eMail = self.eMailTextField.text, let pwd = self.passwordTextField.text {
-            if LoginManager.sharedInstance.login(id: eMail, password: pwd) {
-                if LoginManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
-                    return true
-                }
+            LoginManager.sharedInstance.login(id: eMail, password: pwd) {
+                (user, error) in
                 
-                return false
+                if nil == error {
+                    if LoginManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
+                        self.windToBoardPage()
+                    }
+                }
             }
         }
-        
-        return false
     }
     
     func windToBoardPage() {
-        self.performSegue(withIdentifier: "windFromLoginToBoardPage", sender: self)
+        //self.performSegue(withIdentifier: "windFromLoginToBoardPage", sender: self)
+        performSegue(withIdentifier: "unwindFromLoginToBoardPage", sender: self)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        if beginLogin() {
-            windToBoardPage()
-        }
+        beginLogin()
     }
 
     @IBAction func unwindToLoginPage(_ segue: UIStoryboardSegue) {

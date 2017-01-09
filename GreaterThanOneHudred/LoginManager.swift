@@ -28,7 +28,7 @@ class LoginManager {
         return true
     }
     
-    func loginWithExistingKey() -> Bool {
+    func loginWithExistingKey(completion: @escaping (FIRUser?, Error?) -> ()) -> Bool {
         guard let userID = KeychainWrapper.standard.string(forKey: ID_USERID),
             let password = KeychainWrapper.standard.string(forKey: ID_PASSWORD) else {
             return false
@@ -38,26 +38,17 @@ class LoginManager {
             return false
         }
         
-        return login(id: userID, password: password)
+        login(id: userID, password: password, completion: completion)
+        
+        return true
     }
     
     func removeLoginInfo() {
         _ = KeychainWrapper.standard.removeAllKeys()
     }
     
-    func login(id: String, password: String) -> Bool {
-        FIRAuth.auth()?.signIn(withEmail: id, password: password) {
-            (user, error) in
-            
-            if nil != error {
-                print(error ?? "Login is failed")
-                return
-            }
-            
-            print("Login is succeed")
-        }
-        
-        return nil != FIRAuth.auth()?.currentUser?.uid
+    func login(id: String, password: String, completion: @escaping (FIRUser?, Error?) -> ()) {
+        FIRAuth.auth()?.signIn(withEmail: id, password: password, completion: completion)
     }
     
     func logout() {

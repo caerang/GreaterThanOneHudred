@@ -98,6 +98,7 @@
 		DB2FF52A1E1A4EC9005215C1 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				DB7267091E081C17005A9EEB /* ViewController.swift */,
 				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
 				DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */,
 				DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */,
@@ -141,7 +142,6 @@
 				DB2FF5261E19EA33005215C1 /* View */,
 				DB2FF5271E1A40C3005215C1 /* CustomControl */,
 				DB7267071E081C17005A9EEB /* AppDelegate.swift */,
-				DB7267091E081C17005A9EEB /* ViewController.swift */,
 				DB72670B1E081C17005A9EEB /* Main.storyboard */,
 				DB7267111E081C17005A9EEB /* Assets.xcassets */,
 				DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */,

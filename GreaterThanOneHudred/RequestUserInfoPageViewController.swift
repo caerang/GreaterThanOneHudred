@@ -13,6 +13,8 @@ class RequestUserInfoPageViewController : UIViewController, UITextFieldDelegate 
     @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         eMailTextField.delegate = self
     }
     

@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 
 class RequestUserInfoPageViewController : UIViewController, UITextFieldDelegate {
+    let ErrorMsgLoginIsFailed = "Sending email is failed"
+    let ErrorMsgEmailAddressIsBadlyFormatted = "The email address is badly formatted."
+    
     @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
     
     override func viewDidLoad() {
@@ -45,9 +48,23 @@ class RequestUserInfoPageViewController : UIViewController, UITextFieldDelegate 
             (error) in
             
             if nil != error {
-                print(error ?? "Sending password reset mail is failed")
+                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        self.showErrorMessage(message: self.ErrorMsgEmailAddressIsBadlyFormatted)
+                    default:
+                        self.showErrorMessage(message: self.ErrorMsgLoginIsFailed)
+                    }
+                }
             }
         }
+    }
+    
+    func showErrorMessage(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        self.present(alert, animated: false)
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {

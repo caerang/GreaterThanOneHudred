@@ -14,7 +14,7 @@
 		DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */; };
 		DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */; };
 		DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267071E081C17005A9EEB /* AppDelegate.swift */; };
-		DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267091E081C17005A9EEB /* ViewController.swift */; };
+		DB72670A1E081C17005A9EEB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7267091E081C17005A9EEB /* MainPageViewController.swift */; };
 		DB72670D1E081C17005A9EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB72670B1E081C17005A9EEB /* Main.storyboard */; };
 		DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */; };
 		DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7267111E081C17005A9EEB /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 		DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSingleLineProtocol.swift; sourceTree = "<group>"; };
 		DB7267041E081C17005A9EEB /* GreaterThanOneHundred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreaterThanOneHundred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7267071E081C17005A9EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB7267091E081C17005A9EEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB7267091E081C17005A9EEB /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		DB72670C1E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB72670F1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GreaterThanOneHudred.xcdatamodel; sourceTree = "<group>"; };
 		DB7267111E081C17005A9EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		DB2FF52A1E1A4EC9005215C1 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				DB7267091E081C17005A9EEB /* ViewController.swift */,
+				DB7267091E081C17005A9EEB /* MainPageViewController.swift */,
 				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
 				DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */,
 				DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */,
@@ -304,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB72670A1E081C17005A9EEB /* ViewController.swift in Sources */,
+				DB72670A1E081C17005A9EEB /* MainPageViewController.swift in Sources */,
 				DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */,
 				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
 				DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */,

@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 
 class LoginPageViewController : UIViewController, UITextFieldDelegate {
+    let ErrorMsgLoginIsFailed = "Login is failed"
+    let ErrorMsgEmailAddressIsBadlyFormatted = "The email address is badly formatted."
+    let ErrorMsgPasswordIsInvalid = "The password is invalid or the user does not have a password."
+    
     @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
     @IBOutlet weak var passwordTextField: UITextFieldSingleLine!
     
@@ -46,18 +50,37 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
             LoginManager.sharedInstance.login(id: eMail, password: pwd) {
                 (user, error) in
                 
-                if nil == error {
-                    if LoginManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
-                        self.windToBoardPage()
+                if nil != error {
+                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                        switch errCode {
+                        case .errorCodeInvalidEmail:
+                            self.showErrorMessage(message: self.ErrorMsgEmailAddressIsBadlyFormatted)
+                        case .errorCodeWrongPassword:
+                            self.showErrorMessage(message: self.ErrorMsgPasswordIsInvalid)
+                        default:
+                            self.showErrorMessage(message: self.ErrorMsgLoginIsFailed)
+                        }
                     }
+                    
+                    return
+                }
+                
+                if LoginManager.sharedInstance.saveLoginInfo(id: eMail, password: pwd) {
+                    self.windToBoardPage()
                 }
             }
         }
     }
     
     func windToBoardPage() {
-        //self.performSegue(withIdentifier: "windFromLoginToBoardPage", sender: self)
         performSegue(withIdentifier: "unwindFromLoginToBoardPage", sender: self)
+    }
+    
+    func showErrorMessage(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        self.present(alert, animated: false)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {

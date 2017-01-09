@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainPageViewController: UIViewController {
     @IBAction func unwindToMainPage(_ segue: UIStoryboardSegue) {
         
     }

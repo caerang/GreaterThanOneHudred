@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GreaterThanOneHundred" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainPageViewController" customModule="GreaterThanOneHundred" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -100,7 +100,7 @@ from a book.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="834" y="37"/>
         </scene>
         <!--Sign Up Page View Controller-->
         <scene sceneID="GE4-yx-vz5">
@@ -192,7 +192,6 @@ from a book.</string>
                                 </state>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="5qm-bM-IRg" eventType="touchUpInside" id="i5t-Fu-OiN"/>
-                                    <segue destination="0G5-Xe-H71" kind="presentation" id="Jqc-T6-0V9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -221,12 +220,13 @@ from a book.</string>
                         <outlet property="nationalityTextField" destination="dKl-6R-qQ1" id="7Xp-qI-lTe"/>
                         <outlet property="passwordTextField" destination="g5O-U8-g1l" id="h0h-Eo-qpE"/>
                         <outlet property="userNameTextField" destination="0p6-n4-0zn" id="SUl-2y-IdF"/>
+                        <segue destination="EPd-o0-P1b" kind="unwind" identifier="unwindFromSignUpToBoardPage" unwindAction="unwindToBoardPage:" id="Gnu-ra-GCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPh-sh-Y70" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EPd-o0-P1b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="852" y="38"/>
+            <point key="canvasLocation" x="833" y="778"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="T8V-u7-a1G">
@@ -450,14 +450,11 @@ from a book.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCm-JE-Vsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="PjR-2w-nYX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="852" y="771"/>
+            <point key="canvasLocation" x="20" y="37"/>
         </scene>
     </scenes>
     <resources>
         <image name="backButton" width="13" height="21"/>
         <image name="img_title" width="221" height="81"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Jqc-T6-0V9"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,12 @@ import UIKit
 import Firebase
 
 class SignUpPageViewController : UIViewController, UITextFieldDelegate {
+    let ErrorMsgRegisterFormIsNotValid = "Register form is not valid."
+    let ErrorMsgEmailAddressIsBadlyFormatted = "The email address is badly formatted."
+    let ErrorMsgEmailAddressIsAlreadyInUse = "The email address is already in use by another account."
+    let ErrorMsgPasswordMustBeSixCharactersLongOrMore = "The password mest be 6 characters long or more."
+    let ErrorMsgUserRegistrationIsFailedByUnknownIssue = "User registration is failed."
+    
     @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
     @IBOutlet weak var passwordTextField: UITextFieldSingleLine!
     @IBOutlet weak var userNameTextField: UITextFieldSingleLine!
@@ -50,6 +56,7 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
         }
         
         guard !eMail.isEmpty && !pwd.isEmpty && !name.isEmpty && !nationality.isEmpty else {
+            showErrorMessage(message: ErrorMsgRegisterFormIsNotValid)
             return
         }
         
@@ -57,7 +64,19 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
             (user: FIRUser?, createUserErr) in
             
             if nil != createUserErr {
-                print(createUserErr ?? "Creating user is failed")
+                if let errCode = FIRAuthErrorCode(rawValue: createUserErr!._code) {
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        self.showErrorMessage(message: self.ErrorMsgEmailAddressIsBadlyFormatted)
+                    case .errorCodeEmailAlreadyInUse:
+                        self.showErrorMessage(message: self.ErrorMsgEmailAddressIsAlreadyInUse)
+                    case .errorCodeWeakPassword:
+                        self.showErrorMessage(message: self.ErrorMsgPasswordMustBeSixCharactersLongOrMore)
+                    default:
+                        self.showErrorMessage(message: self.ErrorMsgUserRegistrationIsFailedByUnknownIssue)
+                    }
+                }
+
                 return
             }
             
@@ -75,8 +94,20 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
                 if nil != updateChildValueErr {
                     print(updateChildValueErr ?? "Updating child values is failed")
                 }
+                
+                LoginManager.sharedInstance.login(id: eMail, password: pwd) {
+                    (user, error) in
+                    self.performSegue(withIdentifier: "unwindFromSignUpToBoardPage", sender: self)
+                }
             }
         }
+    }
+    
+    func showErrorMessage(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        self.present(alert, animated: false)
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {

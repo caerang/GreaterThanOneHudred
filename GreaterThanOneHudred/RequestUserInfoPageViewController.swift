@@ -13,7 +13,7 @@ class RequestUserInfoPageViewController : UIViewController, UITextFieldDelegate 
     let ErrorMsgLoginIsFailed = "Sending email is failed"
     let ErrorMsgEmailAddressIsBadlyFormatted = "The email address is badly formatted."
     
-    @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
+    @IBOutlet weak var eMailTextField: TextFieldSingleLine!
     
     override func viewDidLoad() {
         super.viewDidLoad()

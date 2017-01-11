@@ -14,8 +14,8 @@ class LoginPageViewController : UIViewController, UITextFieldDelegate {
     let ErrorMsgEmailAddressIsBadlyFormatted = "The email address is badly formatted."
     let ErrorMsgPasswordIsInvalid = "The password is invalid or the user does not have a password."
     
-    @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
-    @IBOutlet weak var passwordTextField: UITextFieldSingleLine!
+    @IBOutlet weak var eMailTextField: TextFieldSingleLine!
+    @IBOutlet weak var passwordTextField: TextFieldSingleLine!
     
     override func viewDidLoad() {
         super.viewDidLoad()

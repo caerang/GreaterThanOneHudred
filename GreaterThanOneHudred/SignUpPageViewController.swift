@@ -16,10 +16,10 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
     let ErrorMsgPasswordMustBeSixCharactersLongOrMore = "The password mest be 6 characters long or more."
     let ErrorMsgUserRegistrationIsFailedByUnknownIssue = "User registration is failed."
     
-    @IBOutlet weak var eMailTextField: UITextFieldSingleLine!
-    @IBOutlet weak var passwordTextField: UITextFieldSingleLine!
-    @IBOutlet weak var userNameTextField: UITextFieldSingleLine!
-    @IBOutlet weak var nationalityTextField: UITextFieldSingleLine!
+    @IBOutlet weak var eMailTextField: TextFieldSingleLine!
+    @IBOutlet weak var passwordTextField: TextFieldSingleLine!
+    @IBOutlet weak var userNameTextField: TextFieldSingleLine!
+    @IBOutlet weak var nationalityTextField: TextFieldSingleLine!
     
     override func viewDidLoad() {
         super.viewDidLoad()

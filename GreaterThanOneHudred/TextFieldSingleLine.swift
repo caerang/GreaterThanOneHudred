@@ -8,11 +8,11 @@
 
 import UIKit
 
-class UITextFieldSingleLine: UITextField, UITextFieldSingleLineProtocol {
+class TextFieldSingleLine: UITextField, UITextFieldSingleLineProtocol {
     let singleLineView: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
-        uiView.translatesAutoresizingMaskIntoConstraints = false
+        uiView.translatesAutoresizingMaskIntoConstraints = false // 자동으로 생성되는 Constraints 들과 코드에서 추가한 Constraints 와 충돌 방지 위해 false 설정
         return uiView
     }()
     

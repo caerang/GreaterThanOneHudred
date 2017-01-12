@@ -53,7 +53,7 @@ from a book.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jf-Av-Uxk">
-                                <rect key="frame" x="43" y="514.5" width="288" height="45"/>
+                                <rect key="frame" x="43.5" y="514.5" width="288" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ULL-Nw-5da"/>
@@ -431,10 +431,38 @@ from a book.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GSh-io-yFK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memoCell" id="8fe-bg-kUC" customClass="MemoTableViewCell" customModule="GreaterThanOneHundred" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8fe-bg-kUC" id="jkK-YB-nC7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rsR-vI-DCg" id="4ms-o8-CgI"/>
+                                    <outlet property="delegate" destination="rsR-vI-DCg" id="01y-Kl-0KB"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-Zu-zQg">
+                                <rect key="frame" x="314" y="597" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ccq-yY-gCY"/>
+                                    <constraint firstAttribute="width" constant="45" id="NEc-no-53k"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-5a-yEh">
                                 <rect key="frame" x="291" y="28" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="rsR-vI-DCg" eventType="touchUpInside" id="2oF-cd-A50"/>
                                     <segue destination="PjR-2w-nYX" kind="unwind" unwindAction="unwindToMainPage:" id="EF6-vs-KfA"/>
@@ -442,18 +470,28 @@ from a book.</string>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yxI-R3-QT4" firstAttribute="top" secondItem="GSh-io-yFK" secondAttribute="bottom" id="8ec-Jv-5N0"/>
+                            <constraint firstItem="yxI-R3-QT4" firstAttribute="top" secondItem="ugd-Zu-zQg" secondAttribute="bottom" constant="25" id="9U6-Lo-Tnt"/>
+                            <constraint firstItem="GSh-io-yFK" firstAttribute="leading" secondItem="dka-bh-Hp1" secondAttribute="leading" id="Ccz-ly-Um7"/>
+                            <constraint firstAttribute="trailing" secondItem="GSh-io-yFK" secondAttribute="trailing" id="F8F-E9-R6g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ugd-Zu-zQg" secondAttribute="trailing" id="TpX-om-1Bw"/>
+                            <constraint firstItem="GSh-io-yFK" firstAttribute="top" secondItem="In7-Ct-03A" secondAttribute="bottom" constant="8" id="tYq-gQ-eAm"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="memoTableView" destination="GSh-io-yFK" id="2Ay-0d-ZrH"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="windToTitlePage" id="BWM-0d-ng7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCm-JE-Vsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="PjR-2w-nYX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="20" y="37"/>
+            <point key="canvasLocation" x="20" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="45" height="45"/>
         <image name="backButton" width="13" height="21"/>
         <image name="img_title" width="221" height="81"/>
     </resources>

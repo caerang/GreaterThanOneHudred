@@ -33,7 +33,15 @@ class WordingViewController: UIViewController {
         self.scrollView.addSubview(myWordingViewController.view)
         myWordingViewController.didMove(toParentViewController: self)
         
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.height - 66)
+        let sharedViewController = SharedWordingViewController(nibName: "SharedWordingViewController", bundle: nil)
+        var frameSharedView = sharedViewController.view.frame
+        frameSharedView.origin.x = self.view.frame.size.width
+        sharedViewController.view.frame = frameSharedView
+        self.addChildViewController(sharedViewController)
+        self.scrollView.addSubview(sharedViewController.view)
+        sharedViewController.didMove(toParentViewController: self)
+        
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width * 2, height: self.view.frame.height - 66)
     }
 
     override func didReceiveMemoryWarning() {

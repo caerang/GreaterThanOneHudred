@@ -1,14 +1,14 @@
 //
-//  BoardPageViewController.swift
+//  MyBoardViewController.swift
 //  GreaterThanOneHundred
 //
-//  Created by stonecoldjuice on 2017. 1. 4..
+//  Created by stonecoldjuice on 2017. 1. 16..
 //  Copyright © 2017년 dreamFactory. All rights reserved.
 //
 
 import UIKit
 
-class BoardPageViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyBoardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var memoTableView: UITableView!
     
     let NumOfRows = 3
@@ -20,37 +20,38 @@ class BoardPageViewController : UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let isSucceed = LoginManager.sharedInstance.loginWithExistingKey {
-            (user, error) in
-            
-            if nil != error {
-                self.performSegue(withIdentifier: "windToTitlePage", sender: self)
-            }
-        }
-        
-        if !isSucceed {
-            LoginManager.sharedInstance.removeLoginInfo()
-            perform(#selector(unwindToTitlePage), with: self, afterDelay: 0)
-        }
+
+        // Do any additional setup after loading the view.
+        memoTableView.register(UINib(nibName: "MemoTableViewCell", bundle: nil), forCellReuseIdentifier: "memoCell")
+//        memoTableView.tableFooterView?.addSubview(UIView())
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    func unwindToTitlePage() {
-        performSegue(withIdentifier: "windToTitlePage", sender: self)
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tableTotalRowNumber
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell") as? MemoTableViewCell
-
+        
         cell?.backgroundColor = self.MemoColors[indexPath.row % self.MemoColors.count]
         
         return cell!
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(self.TableRowHeight)
     }
@@ -61,14 +62,5 @@ class BoardPageViewController : UIViewController, UITableViewDelegate, UITableVi
             tableTotalRowNumber += 3
             memoTableView.reloadData()
         }
-    }
-    
-    @IBAction func logoutButtonPressed(_ sender: Any) {
-        LoginManager.sharedInstance.logout()
-        performSegue(withIdentifier: "windToTitlePage", sender: self)
-    }
-    
-    @IBAction func unwindToBoardPage(_ segue: UIStoryboardSegue) {
-        
     }
 }

@@ -20,9 +20,13 @@
 		DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB72670E1E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld */; };
 		DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7267111E081C17005A9EEB /* Assets.xcassets */; };
 		DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7267131E081C17005A9EEB /* LaunchScreen.storyboard */; };
+		DB805CB51E2CB6620049CE42 /* WordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805CB31E2CB6620049CE42 /* WordingTableViewCell.swift */; };
+		DB805CB61E2CB6620049CE42 /* WordingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB805CB41E2CB6620049CE42 /* WordingTableViewCell.xib */; };
+		DB805CB91E2CB6CD0049CE42 /* MyWordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805CB71E2CB6CD0049CE42 /* MyWordingViewController.swift */; };
+		DB805CBA1E2CB6CD0049CE42 /* MyWordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB805CB81E2CB6CD0049CE42 /* MyWordingViewController.xib */; };
+		DB805CBC1E2CBBEB0049CE42 /* WordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805CBB1E2CBBEB0049CE42 /* WordingViewController.swift */; };
 		DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */; };
 		DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginManager.swift */; };
-		DBBCC4281E1CD49B00868DC9 /* BoardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */; };
 		DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */; };
 		DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */; };
 /* End PBXBuildFile section */
@@ -45,9 +49,13 @@
 		DB7267111E081C17005A9EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB7267141E081C17005A9EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7267161E081C17005A9EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB805CB31E2CB6620049CE42 /* WordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordingTableViewCell.swift; sourceTree = "<group>"; };
+		DB805CB41E2CB6620049CE42 /* WordingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordingTableViewCell.xib; sourceTree = "<group>"; };
+		DB805CB71E2CB6CD0049CE42 /* MyWordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWordingViewController.swift; sourceTree = "<group>"; };
+		DB805CB81E2CB6CD0049CE42 /* MyWordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWordingViewController.xib; sourceTree = "<group>"; };
+		DB805CBB1E2CBBEB0049CE42 /* WordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordingViewController.swift; sourceTree = "<group>"; };
 		DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		DBBCC4201E1BE58800868DC9 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
-		DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPageViewController.swift; sourceTree = "<group>"; };
 		DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		DBBCC4301E1CDB4500868DC9 /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKeychainWrapper.h; sourceTree = "<group>"; };
@@ -87,6 +95,8 @@
 			children = (
 				DB2FF5281E1A4110005215C1 /* TextFieldSingleLine.swift */,
 				DB2BC5931E2773BC008D51E7 /* MemoTableViewCell.swift */,
+				DB805CB31E2CB6620049CE42 /* WordingTableViewCell.swift */,
+				DB805CB41E2CB6620049CE42 /* WordingTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -97,8 +107,10 @@
 				DB7267091E081C17005A9EEB /* MainPageViewController.swift */,
 				DB2FF52B1E1A4EEE005215C1 /* SignUpPageViewController.swift */,
 				DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */,
-				DBBCC4271E1CD49B00868DC9 /* BoardPageViewController.swift */,
 				DB2BC4FF1E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift */,
+				DB805CB71E2CB6CD0049CE42 /* MyWordingViewController.swift */,
+				DB805CB81E2CB6CD0049CE42 /* MyWordingViewController.xib */,
+				DB805CBB1E2CBBEB0049CE42 /* WordingViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -238,8 +250,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7267151E081C17005A9EEB /* LaunchScreen.storyboard in Resources */,
+				DB805CBA1E2CB6CD0049CE42 /* MyWordingViewController.xib in Resources */,
 				DB2BC4FC1E1E1DB7008D51E7 /* GoogleService-Info.plist in Resources */,
 				DB7267121E081C17005A9EEB /* Assets.xcassets in Resources */,
+				DB805CB61E2CB6620049CE42 /* WordingTableViewCell.xib in Resources */,
 				DB72670D1E081C17005A9EEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,11 +315,13 @@
 			files = (
 				DB72670A1E081C17005A9EEB /* MainPageViewController.swift in Sources */,
 				DB2BC5941E2773BC008D51E7 /* MemoTableViewCell.swift in Sources */,
+				DB805CBC1E2CBBEB0049CE42 /* WordingViewController.swift in Sources */,
+				DB805CB51E2CB6620049CE42 /* WordingTableViewCell.swift in Sources */,
 				DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */,
 				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
 				DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */,
 				DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */,
-				DBBCC4281E1CD49B00868DC9 /* BoardPageViewController.swift in Sources */,
+				DB805CB91E2CB6CD0049CE42 /* MyWordingViewController.swift in Sources */,
 				DB7267081E081C17005A9EEB /* AppDelegate.swift in Sources */,
 				DB7267101E081C17005A9EEB /* GreaterThanOneHudred.xcdatamodeld in Sources */,
 				DB2FF5291E1A4110005215C1 /* TextFieldSingleLine.swift in Sources */,

@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LKU-yo-AIE">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LKU-yo-AIE">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -29,7 +29,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbt-G9-HtA">
-                    <rect key="frame" x="314" y="590" width="45" height="45"/>
+                    <rect key="frame" x="314" y="584" width="45" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="ZTK-13-X25"/>
                         <constraint firstAttribute="width" constant="45" id="s4I-Sd-fEa"/>
@@ -43,7 +43,7 @@
                 <constraint firstAttribute="trailing" secondItem="LKU-yo-AIE" secondAttribute="trailing" id="FE7-ue-o1N"/>
                 <constraint firstAttribute="trailing" secondItem="Wbt-G9-HtA" secondAttribute="trailing" constant="16" id="ZLd-qz-OXY"/>
                 <constraint firstItem="LKU-yo-AIE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="itj-e6-t4Y"/>
-                <constraint firstAttribute="bottom" secondItem="Wbt-G9-HtA" secondAttribute="bottom" constant="32" id="mBe-oP-d7N"/>
+                <constraint firstAttribute="bottom" secondItem="Wbt-G9-HtA" secondAttribute="bottom" constant="38" id="mBe-oP-d7N"/>
                 <constraint firstItem="LKU-yo-AIE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="teM-8Z-Itg"/>
             </constraints>
             <point key="canvasLocation" x="77" y="-8"/>

@@ -24,9 +24,9 @@
 		DB805CB61E2CB6620049CE42 /* WordingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB805CB41E2CB6620049CE42 /* WordingTableViewCell.xib */; };
 		DB805CB91E2CB6CD0049CE42 /* MyWordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805CB71E2CB6CD0049CE42 /* MyWordingViewController.swift */; };
 		DB805CBA1E2CB6CD0049CE42 /* MyWordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB805CB81E2CB6CD0049CE42 /* MyWordingViewController.xib */; };
-		DB805CBC1E2CBBEB0049CE42 /* WordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805CBB1E2CBBEB0049CE42 /* WordingViewController.swift */; };
 		DB805CBF1E2E1C330049CE42 /* SharedWordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805CBD1E2E1C330049CE42 /* SharedWordingViewController.swift */; };
 		DB805CC01E2E1C330049CE42 /* SharedWordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB805CBE1E2E1C330049CE42 /* SharedWordingViewController.xib */; };
+		DB805D041E30AA630049CE42 /* WordingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB805D031E30AA630049CE42 /* WordingPageViewController.swift */; };
 		DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */; };
 		DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginManager.swift */; };
 		DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */; };
@@ -55,9 +55,9 @@
 		DB805CB41E2CB6620049CE42 /* WordingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordingTableViewCell.xib; sourceTree = "<group>"; };
 		DB805CB71E2CB6CD0049CE42 /* MyWordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWordingViewController.swift; sourceTree = "<group>"; };
 		DB805CB81E2CB6CD0049CE42 /* MyWordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWordingViewController.xib; sourceTree = "<group>"; };
-		DB805CBB1E2CBBEB0049CE42 /* WordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordingViewController.swift; sourceTree = "<group>"; };
 		DB805CBD1E2E1C330049CE42 /* SharedWordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedWordingViewController.swift; sourceTree = "<group>"; };
 		DB805CBE1E2E1C330049CE42 /* SharedWordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharedWordingViewController.xib; sourceTree = "<group>"; };
+		DB805D031E30AA630049CE42 /* WordingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordingPageViewController.swift; sourceTree = "<group>"; };
 		DBBCC41D1E1B698D00868DC9 /* LogInPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPageViewController.swift; sourceTree = "<group>"; };
 		DBBCC4201E1BE58800868DC9 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
@@ -114,9 +114,9 @@
 				DB2BC4FF1E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift */,
 				DB805CB71E2CB6CD0049CE42 /* MyWordingViewController.swift */,
 				DB805CB81E2CB6CD0049CE42 /* MyWordingViewController.xib */,
-				DB805CBB1E2CBBEB0049CE42 /* WordingViewController.swift */,
 				DB805CBD1E2E1C330049CE42 /* SharedWordingViewController.swift */,
 				DB805CBE1E2E1C330049CE42 /* SharedWordingViewController.xib */,
+				DB805D031E30AA630049CE42 /* WordingPageViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -322,7 +322,6 @@
 			files = (
 				DB72670A1E081C17005A9EEB /* MainPageViewController.swift in Sources */,
 				DB2BC5941E2773BC008D51E7 /* MemoTableViewCell.swift in Sources */,
-				DB805CBC1E2CBBEB0049CE42 /* WordingViewController.swift in Sources */,
 				DB805CB51E2CB6620049CE42 /* WordingTableViewCell.swift in Sources */,
 				DB805CBF1E2E1C330049CE42 /* SharedWordingViewController.swift in Sources */,
 				DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */,
@@ -336,6 +335,7 @@
 				DBBCC41E1E1B698D00868DC9 /* LogInPageViewController.swift in Sources */,
 				DB2BC5001E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift in Sources */,
 				DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */,
+				DB805D041E30AA630049CE42 /* WordingPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

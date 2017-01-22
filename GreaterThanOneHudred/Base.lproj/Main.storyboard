@@ -10,76 +10,90 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Wording Input View Controller-->
+        <scene sceneID="j4o-DL-pPg">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="YR7-q3-w1A" customClass="WordingInputViewController" customModule="GreaterThanOneHundred" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Azo-4F-xMT"/>
+                        <viewControllerLayoutGuide type="bottom" id="S1f-Az-t6b"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Omd-bt-PSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-BD-cjw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23o-Ty-NLb">
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-AT-qn6">
+                                        <rect key="frame" x="320" y="195" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="Zox-OE-8ev"/>
+                                            <constraint firstAttribute="height" constant="45" id="old-ir-QGB"/>
+                                        </constraints>
+                                        <state key="normal" image="write"/>
+                                        <connections>
+                                            <action selector="inputButtonPressed:" destination="YR7-q3-w1A" eventType="touchUpInside" id="008-F5-yuI"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ARb-FC-W1Y">
+                                        <rect key="frame" x="40" y="20" width="305" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="1XY-kp-5nN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ARb-FC-W1Y" secondAttribute="trailing" constant="30" id="94H-Pi-GoC"/>
+                                    <constraint firstAttribute="bottom" secondItem="ARb-FC-W1Y" secondAttribute="bottom" constant="80" id="Ag6-3S-C9J"/>
+                                    <constraint firstItem="ARb-FC-W1Y" firstAttribute="top" secondItem="23o-Ty-NLb" secondAttribute="top" constant="20" id="WUw-Z3-038"/>
+                                    <constraint firstAttribute="trailing" secondItem="hdU-AT-qn6" secondAttribute="trailing" constant="10" id="Wsh-dy-FY7"/>
+                                    <constraint firstAttribute="bottom" secondItem="hdU-AT-qn6" secondAttribute="bottom" constant="10" id="aZN-mw-o20"/>
+                                    <constraint firstItem="ARb-FC-W1Y" firstAttribute="leading" secondItem="23o-Ty-NLb" secondAttribute="leading" constant="40" id="aiK-NX-ZIx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Lg-BD-cjw" firstAttribute="leading" secondItem="Omd-bt-PSb" secondAttribute="leadingMargin" constant="-16" id="AvX-De-OI6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Lg-BD-cjw" secondAttribute="trailing" constant="-16" id="DHN-xn-Ma0"/>
+                            <constraint firstItem="S1f-Az-t6b" firstAttribute="top" secondItem="6Lg-BD-cjw" secondAttribute="bottom" id="NPd-na-Bqp"/>
+                            <constraint firstItem="23o-Ty-NLb" firstAttribute="leading" secondItem="Omd-bt-PSb" secondAttribute="leadingMargin" constant="-16" id="PSR-YQ-fIk"/>
+                            <constraint firstItem="S1f-Az-t6b" firstAttribute="top" secondItem="23o-Ty-NLb" secondAttribute="bottom" id="PgQ-zX-v8X"/>
+                            <constraint firstItem="6Lg-BD-cjw" firstAttribute="top" secondItem="Azo-4F-xMT" secondAttribute="bottom" id="nSV-4R-JlQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="23o-Ty-NLb" secondAttribute="trailing" constant="-16" id="pL3-n5-n2x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="wordingInputView" destination="23o-Ty-NLb" id="kfP-WX-IpG"/>
+                        <outlet property="wordingTextField" destination="ARb-FC-W1Y" id="Vks-AV-4ri"/>
+                        <segue destination="47B-L3-1X8" kind="unwind" identifier="unwindFromInputViewToBoardPage" animates="NO" unwindAction="unwindToBoardPage:" id="29R-XY-bNt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUP-eK-HyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="47B-L3-1X8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-47.200000000000003" y="777.66116941529242"/>
+        </scene>
         <!--Wording Page View Controller-->
         <scene sceneID="Nhn-4g-cYj">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ENm-Y3-eUs" customClass="WordingPageViewController" customModule="GreaterThanOneHundred" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="windToTitlePage" id="Oph-va-gpe"/>
+                        <segue destination="YR7-q3-w1A" kind="presentation" identifier="windToWordingInput" animates="NO" id="ldb-nn-4vA"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVx-zC-xrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="-652"/>
-        </scene>
-        <!--Wording View Controller-->
-        <scene sceneID="mCL-wK-JY7">
-            <objects>
-                <viewController id="2Da-Vs-Vcx" customClass="WordingViewController" customModule="GreaterThanOneHundred" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jKd-Sh-pkJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="DlE-yL-ejF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ljC-I8-G48">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7q3-b5-h7w">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHa-V5-1w8">
-                                <rect key="frame" x="294" y="28" width="65" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="RTY-NV-nRW"/>
-                                    <constraint firstAttribute="height" constant="30" id="whW-0y-Pn5"/>
-                                </constraints>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logoutButtonPressed:" destination="2Da-Vs-Vcx" eventType="touchUpInside" id="qGT-23-UwX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLG-FM-oZH">
-                                <rect key="frame" x="304" y="602" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="buf-YR-67d"/>
-                                    <constraint firstAttribute="height" constant="45" id="if9-3k-I6a"/>
-                                </constraints>
-                                <state key="normal" image="add"/>
-                                <connections>
-                                    <action selector="addBtnTabbed:" destination="2Da-Vs-Vcx" eventType="touchUpInside" id="zDJ-An-Zqe"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QLG-FM-oZH" secondAttribute="trailing" constant="10" id="6eh-Hb-GH4"/>
-                            <constraint firstItem="DlE-yL-ejF" firstAttribute="top" secondItem="7q3-b5-h7w" secondAttribute="bottom" id="LYf-hx-7rp"/>
-                            <constraint firstAttribute="trailing" secondItem="7q3-b5-h7w" secondAttribute="trailing" id="TQi-NT-v9w"/>
-                            <constraint firstItem="7q3-b5-h7w" firstAttribute="top" secondItem="jKd-Sh-pkJ" secondAttribute="bottom" id="bCr-IA-DdW"/>
-                            <constraint firstItem="PHa-V5-1w8" firstAttribute="top" secondItem="jKd-Sh-pkJ" secondAttribute="bottom" constant="8" id="lbf-hH-dOa"/>
-                            <constraint firstItem="7q3-b5-h7w" firstAttribute="leading" secondItem="ljC-I8-G48" secondAttribute="leading" id="niL-aY-Lsd"/>
-                            <constraint firstItem="DlE-yL-ejF" firstAttribute="top" secondItem="QLG-FM-oZH" secondAttribute="bottom" constant="20" id="oqy-bC-XYa"/>
-                            <constraint firstItem="PHa-V5-1w8" firstAttribute="trailing" secondItem="ljC-I8-G48" secondAttribute="trailingMargin" id="vV9-pi-qB2"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="7q3-b5-h7w" id="cAj-Qj-HeY"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="windToTitlePage" id="Ano-FT-hFC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gf-eV-SA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-310" y="230"/>
+            <point key="canvasLocation" x="-46" y="37"/>
         </scene>
         <!--Main Page View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -492,11 +506,8 @@ from a book.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="45" height="45"/>
         <image name="backButton" width="13" height="21"/>
         <image name="img_title" width="221" height="81"/>
+        <image name="write" width="45" height="45"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Oph-va-gpe"/>
-    </inferredMetricsTieBreakers>
 </document>

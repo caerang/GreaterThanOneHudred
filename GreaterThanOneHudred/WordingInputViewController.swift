@@ -11,6 +11,8 @@ import UIKit
 class WordingInputViewController: UIViewController {
     @IBOutlet weak var wordingInputView: UIView!
     @IBOutlet weak var wordingTextField: UITextView!
+    @IBOutlet weak var yesShareButton: UIButton!
+    @IBOutlet weak var noShareButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class WordingInputViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.wordingTextField.becomeFirstResponder()
+        toggleButton(self.noShareButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,5 +58,25 @@ class WordingInputViewController: UIViewController {
 
     @IBAction func inputButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "unwindFromInputViewToBoardPage", sender: self)
+    }
+    @IBAction func shareYesButtonPressed(_ sender: Any) {
+        toggleButton(self.yesShareButton)
+        toggleButton(self.noShareButton)
+    }
+    @IBAction func shareNoButtonPressed(_ sender: Any) {
+        toggleButton(self.yesShareButton)
+        toggleButton(self.noShareButton)
+    }
+    
+    func toggleButton(_ sender: Any) {
+        if let button = sender as? UIButton {
+            button.isSelected = !button.isSelected
+            if button.isSelected {
+                button.setTitleColor(UIColor.init(white: 1.0, alpha: 1.0), for: .normal)
+            }
+            else {
+                button.setTitleColor(UIColor.init(white: 1.0, alpha: 0.5), for: .normal)
+            }
+        }
     }
 }

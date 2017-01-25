@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WordingInputViewController: UIViewController {
     @IBOutlet weak var wordingInputView: UIView!
@@ -31,17 +32,6 @@ class WordingInputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func setupKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: .UIKeyboardWillHide, object: nil)
@@ -56,18 +46,6 @@ class WordingInputViewController: UIViewController {
         self.wordingInputView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
     }
 
-    @IBAction func inputButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "unwindFromInputViewToBoardPage", sender: self)
-    }
-    @IBAction func shareYesButtonPressed(_ sender: Any) {
-        toggleButton(self.yesShareButton)
-        toggleButton(self.noShareButton)
-    }
-    @IBAction func shareNoButtonPressed(_ sender: Any) {
-        toggleButton(self.yesShareButton)
-        toggleButton(self.noShareButton)
-    }
-    
     func toggleButton(_ sender: Any) {
         if let button = sender as? UIButton {
             button.isSelected = !button.isSelected
@@ -78,5 +56,34 @@ class WordingInputViewController: UIViewController {
                 button.setTitleColor(UIColor.init(white: 1.0, alpha: 0.5), for: .normal)
             }
         }
+    }
+    
+    func writeWording() {
+        let wordings = FIRDatabase.database().reference().child("wordings")
+        let child = wordings.childByAutoId()
+        
+        guard let wording = wordingTextField.text,
+            let user = FIRAuth.auth()?.currentUser?.uid else {
+                return
+        }
+        
+        let timestamp = NSNumber(value: Date().timeIntervalSince1970)
+        let kv: [String: Any] = ["text": wording, "user": user, "timestamp": timestamp]
+        child.updateChildValues(kv)
+    }
+    
+    @IBAction func inputButtonPressed(_ sender: Any) {
+        writeWording()
+        performSegue(withIdentifier: "unwindFromInputViewToBoardPage", sender: self)
+    }
+    
+    @IBAction func shareYesButtonPressed(_ sender: Any) {
+        toggleButton(self.yesShareButton)
+        toggleButton(self.noShareButton)
+    }
+    
+    @IBAction func shareNoButtonPressed(_ sender: Any) {
+        toggleButton(self.yesShareButton)
+        toggleButton(self.noShareButton)
     }
 }

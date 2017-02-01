@@ -58,22 +58,37 @@ class WordingInputViewController: UIViewController {
         }
     }
     
-    func writeWording() {
-        let wordings = FIRDatabase.database().reference().child("wordings")
-        let child = wordings.childByAutoId()
-        
-        guard let wording = wordingTextField.text,
-            let user = FIRAuth.auth()?.currentUser?.uid else {
+    func posting() {
+        guard let wording = self.wordingTextField.text,
+            let uid = FIRAuth.auth()?.currentUser?.uid else {
                 return
         }
         
-        let timestamp = NSNumber(value: Date().timeIntervalSince1970)
-        let kv: [String: Any] = ["text": wording, "user": user, "timestamp": timestamp]
-        child.updateChildValues(kv)
+        let refFriends = FIRDatabase.database().reference().child("\(DbConsts.Followers)/\(uid)")
+        
+        refFriends.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            let ref = FIRDatabase.database().reference()
+            let newPostRef = FIRDatabase.database().reference().child("\(DbConsts.Postings)").childByAutoId()
+            let newPostKey = newPostRef.key
+            let timestamp = NSNumber(value: Date().timeIntervalSince1970)
+            
+            var updatedData: [String:Any] = ["\(DbConsts.Postings)/\(newPostKey)":["text":wording, "user":uid, "timestamp":timestamp],
+                                             
+                                             "\(DbConsts.Timelines)/\(uid)/\(newPostKey)/owner":uid]
+            
+            for item in snapshot.children {
+                if let friend = item as? FIRDataSnapshot {
+                    updatedData["\(DbConsts.Timelines)/\(friend.key)/\(newPostKey)/owner"] = uid
+                }
+            }
+            
+            ref.updateChildValues(updatedData)
+        })
     }
     
     @IBAction func inputButtonPressed(_ sender: Any) {
-        writeWording()
+        posting()
         performSegue(withIdentifier: "unwindFromInputViewToBoardPage", sender: self)
     }
     

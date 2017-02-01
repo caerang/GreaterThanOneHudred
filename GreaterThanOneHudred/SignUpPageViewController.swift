@@ -60,9 +60,7 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
             return
         }
         
-        FIRAuth.auth()?.createUser(withEmail: eMail, password: pwd) {
-            (user: FIRUser?, createUserErr) in
-            
+        FIRAuth.auth()?.createUser(withEmail: eMail, password: pwd) { (user: FIRUser?, createUserErr) in
             if nil != createUserErr {
                 if let errCode = FIRAuthErrorCode(rawValue: createUserErr!._code) {
                     switch errCode {
@@ -85,22 +83,57 @@ class SignUpPageViewController : UIViewController, UITextFieldDelegate {
             }
             
             let ref = FIRDatabase.database().reference(fromURL: "https://greaterthanonehundred.firebaseio.com/")
-            let childRef = ref.child("users").child(uid)
-            let values = ["eMail":eMail,"name":name,"nationality":nationality]
+            let updatedData = ["\(DbConsts.Users)/\(uid)":["eMail":eMail,"name":name,"nationality":nationality]]
             
-            childRef.updateChildValues(values) {
-                (updateChildValueErr, ref) in
-                
+            ref.updateChildValues(updatedData) { (updateChildValueErr, ref) in
                 if nil != updateChildValueErr {
                     print(updateChildValueErr ?? "Updating child values is failed")
                 }
                 
-                LoginManager.sharedInstance.login(id: eMail, password: pwd) {
-                    (user, error) in
-                    self.performSegue(withIdentifier: "unwindFromSignUpToBoardPage", sender: self)
+                LoginManager.sharedInstance.login(id: eMail, password: pwd) { (user, error) in
+                    self.makeFollowers {
+                        self.performSegue(withIdentifier: "unwindFromSignUpToBoardPage", sender: self)
+                    }
                 }
             }
         }
+    }
+    
+    func makeFollowers(completion: @escaping () -> ()) {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        
+        let ref = FIRDatabase.database().reference().child("\(DbConsts.Users)")
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var users: [String] = []
+            for userChild in snapshot.children {
+                if let user = userChild as? FIRDataSnapshot {
+                    users.append(user.key)
+                }
+            }
+            var updatedData: [String:Any] = [:]
+            for user in users {
+                if uid == user {
+                    for follower in users {
+                        if user != follower {
+                            updatedData["\(DbConsts.Followers)/\(user)/\(follower)"] = true
+                        }
+                    }
+                }
+                else {
+                    updatedData["\(DbConsts.Followers)/\(user)/\(uid)"] = true
+                }
+            }
+            
+            let ref = FIRDatabase.database().reference()
+            
+            ref.updateChildValues(updatedData, withCompletionBlock: { (error, ref) in
+                completion()
+            })
+        })
+        
     }
     
     func showErrorMessage(message: String) {

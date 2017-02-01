@@ -74,7 +74,7 @@ class WordingInputViewController: UIViewController {
             let timestamp = NSNumber(value: Date().timeIntervalSince1970)
             
             var updatedData: [String:Any] = ["\(DbConsts.Postings)/\(newPostKey)":["text":wording, "user":uid, "timestamp":timestamp],
-                                             
+                                             "\(DbConsts.UserPostings)/\(uid)/\(newPostKey)":true,
                                              "\(DbConsts.Timelines)/\(uid)/\(newPostKey)/owner":uid]
             
             for item in snapshot.children {

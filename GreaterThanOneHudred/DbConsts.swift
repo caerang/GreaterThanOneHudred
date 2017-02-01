@@ -13,4 +13,5 @@ class DbConsts {
     static let Postings: String = "postings"
     static let Followers: String = "followers"
     static let Users: String = "users"
+    static let UserPostings: String = "userPostings"
 }

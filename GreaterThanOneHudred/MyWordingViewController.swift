@@ -58,11 +58,13 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if let endingTo = self.endingTo {
-            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
+//            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
+            let ref = FIRDatabase.database().reference().child("\(DbConsts.UserPostings)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
             runQueryRetrievePostings(query: ref)
         }
         else {
-            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryLimited(toLast: self.tableRowCount + 1)
+//            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryLimited(toLast: self.tableRowCount + 1)
+            let ref = FIRDatabase.database().reference().child("\(DbConsts.UserPostings)").child(uid).queryLimited(toLast: self.tableRowCount + 1)
             runQueryRetrievePostings(query: ref)
         }
     }
@@ -70,7 +72,7 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     func runQueryRetrievePostings(query: FIRDatabaseQuery) {
         query.observeSingleEvent(of: .value, with: { (snapshot) in
             var postLinks = Array(snapshot.children.reversed())
-            
+            var buf: [Wording] = []
             if postLinks.count > Int(self.tableRowCount) {
                 if let endSnapshot = postLinks.remove(at: postLinks.count - 1) as? FIRDataSnapshot {
                     self.endingTo = endSnapshot.key
@@ -89,15 +91,21 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
                     refPost.observeSingleEvent(of: .value, with: {
                         (snapshotPost) in
                         if let post = self.convertWording(from: snapshotPost) {
-                            self.wordings.append(post)
+                            buf.append(post)
                         }
                         
                         self.postCountDidRead = self.postCountDidRead + 1
                         
                         if self.postCountWillRead == self.postCountDidRead {
+                            buf.sort { $0.timestamp!.compare($1.timestamp!) == .orderedDescending }
+                            self.wordings.append(contentsOf: buf)
                             self.postCountWillRead = 0
                             self.postCountDidRead = 0
-                            self.wordingTableView.reloadData()
+                            buf.removeAll()
+                            
+                            DispatchQueue.main.async {
+                                self.wordingTableView.reloadData()
+                            }
                         }
                     })
                 }

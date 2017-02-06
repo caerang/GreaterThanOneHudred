@@ -10,6 +10,8 @@ import UIKit
 
 class WordingTableViewCell: UITableViewCell {
     @IBOutlet weak var wording: UILabel!
+    @IBOutlet weak var dateAndWriter: UILabel!
+    @IBOutlet weak var bookNameAndPageNumber: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

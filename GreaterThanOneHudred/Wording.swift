@@ -12,4 +12,7 @@ class Wording: NSObject {
     var text: String?
     var timestamp: NSNumber?
     var user: String?
+    var userName: String?
+    var bookName: String?
+    var pageNumber: String?
 }

@@ -14,6 +14,8 @@ class WordingInputViewController: UIViewController {
     @IBOutlet weak var wordingTextField: UITextView!
     @IBOutlet weak var yesShareButton: UIButton!
     @IBOutlet weak var noShareButton: UIButton!
+    @IBOutlet weak var bookName: UITextField!
+    @IBOutlet weak var pageNumber: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,30 +62,42 @@ class WordingInputViewController: UIViewController {
     
     func posting() {
         guard let wording = self.wordingTextField.text,
-            let uid = FIRAuth.auth()?.currentUser?.uid else {
-                return
+            let uid = FIRAuth.auth()?.currentUser?.uid,
+            let nameOfBook = self.bookName.text,
+            let numberOfPage = self.pageNumber.text
+        else {
+            return
         }
         
-        let refFriends = FIRDatabase.database().reference().child("\(DbConsts.Followers)/\(uid)")
+        let refUser = FIRDatabase.database().reference().child("\(DbConsts.Users)/\(uid)/name")
         
-        refFriends.observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            let ref = FIRDatabase.database().reference()
-            let newPostRef = FIRDatabase.database().reference().child("\(DbConsts.Postings)").childByAutoId()
-            let newPostKey = newPostRef.key
-            let timestamp = NSNumber(value: Date().timeIntervalSince1970)
-            
-            var updatedData: [String:Any] = ["\(DbConsts.Postings)/\(newPostKey)":["text":wording, "user":uid, "timestamp":timestamp],
-                                             "\(DbConsts.UserPostings)/\(uid)/\(newPostKey)":true,
-                                             "\(DbConsts.Timelines)/\(uid)/\(newPostKey)":true]
-            
-            for item in snapshot.children {
-                if let friend = item as? FIRDataSnapshot {
-                    updatedData["\(DbConsts.Timelines)/\(friend.key)/\(newPostKey)"] = true
-                }
+        refUser.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let userName = snapshot.value as? String else {
+                return
             }
+            let refFriends = FIRDatabase.database().reference().child("\(DbConsts.Followers)/\(uid)")
             
-            ref.updateChildValues(updatedData)
+            refFriends.observeSingleEvent(of: .value, with: {
+                (snapshot) in
+                let ref = FIRDatabase.database().reference()
+                let newPostRef = FIRDatabase.database().reference().child("\(DbConsts.Postings)").childByAutoId()
+                let newPostKey = newPostRef.key
+                let timestamp = NSNumber(value: Date().timeIntervalSince1970)
+                
+                var updatedData: [String:Any] = ["\(DbConsts.Postings)/\(newPostKey)":["text":wording, "user":uid, "userName":userName, "timestamp":timestamp, "bookName":nameOfBook, "pageNumber":numberOfPage],
+                                                 "\(DbConsts.UserPostings)/\(uid)/\(newPostKey)":true,
+                                                 "\(DbConsts.Timelines)/\(uid)/\(newPostKey)":true]
+                
+                if self.yesShareButton.isSelected {
+                    for item in snapshot.children {
+                        if let friend = item as? FIRDataSnapshot {
+                            updatedData["\(DbConsts.Timelines)/\(friend.key)/\(newPostKey)"] = true
+                        }
+                    }
+                }
+                
+                ref.updateChildValues(updatedData)
+            })
         })
     }
     

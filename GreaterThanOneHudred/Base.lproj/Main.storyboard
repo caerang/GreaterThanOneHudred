@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ENm-Y3-eUs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ENm-Y3-eUs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -173,7 +173,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookName" destination="UnD-NB-dQK" id="2Wh-0o-COB"/>
                         <outlet property="noShareButton" destination="otg-fz-hKu" id="3l9-BF-oNS"/>
+                        <outlet property="pageNumber" destination="cJp-Q1-gLO" id="68M-J0-Fmg"/>
                         <outlet property="wordingInputView" destination="23o-Ty-NLb" id="kfP-WX-IpG"/>
                         <outlet property="wordingTextField" destination="ARb-FC-W1Y" id="Vks-AV-4ri"/>
                         <outlet property="yesShareButton" destination="BTS-M0-NCv" id="DWc-Cp-S3x"/>

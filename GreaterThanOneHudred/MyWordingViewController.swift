@@ -137,6 +137,25 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
         if self.wordings.count > indexPath.row {
             let wording = self.wordings[indexPath.row]
             cell?.wording.text = wording.text
+            if let timestamp = wording.timestamp, let userName = wording.userName {
+                var dateStr = ""
+                let date = Date(timeIntervalSince1970: timestamp.doubleValue)
+                if NSCalendar.current.isDateInToday(date) {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "HH:mm a"
+                    dateStr = "Today at \(formatter.string(from: date))"
+                }
+                else {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "MMM dd"
+                    dateStr = "\(formatter.string(from: date))"
+                }
+                
+                cell?.dateAndWriter.text = "\(dateStr) ∙ Writed by \(userName)"
+            }
+            if let bookName = wording.bookName, let pageNumber = wording.pageNumber {
+                cell?.bookNameAndPageNumber.text = "\(bookName) > \(pageNumber)page"
+            }
         }
         
         cell?.backgroundColor = self.WordingColors[indexPath.row % self.WordingColors.count]

@@ -33,6 +33,7 @@
 		DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC4201E1BE58800868DC9 /* LoginManager.swift */; };
 		DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */; };
 		DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */; };
+		DBC51D611E480B5500E76AE0 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC51D601E480B5500E76AE0 /* AccountSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		DBBCC4301E1CDB4500868DC9 /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKeychainWrapper.h; sourceTree = "<group>"; };
+		DBC51D601E480B5500E76AE0 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				DB805CBE1E2E1C330049CE42 /* SharedWordingViewController.xib */,
 				DB805D031E30AA630049CE42 /* WordingPageViewController.swift */,
 				DB805D551E324F7D0049CE42 /* WordingInputViewController.swift */,
+				DBC51D601E480B5500E76AE0 /* AccountSettingViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				DB72670A1E081C17005A9EEB /* MainPageViewController.swift in Sources */,
 				DB805CB51E2CB6620049CE42 /* WordingTableViewCell.swift in Sources */,
 				DB805CBF1E2E1C330049CE42 /* SharedWordingViewController.swift in Sources */,
+				DBC51D611E480B5500E76AE0 /* AccountSettingViewController.swift in Sources */,
 				DBBCC4211E1BE58800868DC9 /* LoginManager.swift in Sources */,
 				DB2FF52C1E1A4EEE005215C1 /* SignUpPageViewController.swift in Sources */,
 				DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */,

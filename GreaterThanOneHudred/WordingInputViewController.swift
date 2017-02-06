@@ -75,11 +75,11 @@ class WordingInputViewController: UIViewController {
             
             var updatedData: [String:Any] = ["\(DbConsts.Postings)/\(newPostKey)":["text":wording, "user":uid, "timestamp":timestamp],
                                              "\(DbConsts.UserPostings)/\(uid)/\(newPostKey)":true,
-                                             "\(DbConsts.Timelines)/\(uid)/\(newPostKey)/owner":uid]
+                                             "\(DbConsts.Timelines)/\(uid)/\(newPostKey)":true]
             
             for item in snapshot.children {
                 if let friend = item as? FIRDataSnapshot {
-                    updatedData["\(DbConsts.Timelines)/\(friend.key)/\(newPostKey)/owner"] = uid
+                    updatedData["\(DbConsts.Timelines)/\(friend.key)/\(newPostKey)"] = true
                 }
             }
             

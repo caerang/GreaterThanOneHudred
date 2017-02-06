@@ -113,32 +113,6 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
         })
     }
     
-    func removePostings() {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
-            return
-        }
-        
-        let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)")
-        
-        ref.runTransactionBlock { (currentData: FIRMutableData) -> FIRTransactionResult in
-            for userChild in currentData.children {
-                if let user = userChild as? FIRMutableData {
-                    for postChild in user.children {
-                        if let post = postChild as? FIRMutableData {
-                            if var owner = post.value as? [String:String] {
-                                if owner["owner"] == uid {
-                                    post.value = nil
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
-            return FIRTransactionResult.success(withValue: currentData)
-        }
-    }
-    
     func convertWording(from snapshot: FIRDataSnapshot) -> Wording? {
         if let dictionary = snapshot.value as? [String: Any] {
             let wording = Wording()

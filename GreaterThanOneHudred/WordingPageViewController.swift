@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WordingPageViewController: UIPageViewController {
+class WordingPageViewController: UIPageViewController, UIScrollViewDelegate {
     let logoutButton: UIButton = {
         let view = UIButton(type: UIButtonType.system)
         view.setTitle("Log out", for: .normal)
@@ -56,7 +56,22 @@ class WordingPageViewController: UIPageViewController {
                                completion: nil)
         }
         
+        for view in self.view.subviews {
+            if let view = view as? UIScrollView {
+                view.delegate = self
+                break
+            }
+        }
+        
         setupSubViews()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.addButton.isHidden = true
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        self.addButton.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

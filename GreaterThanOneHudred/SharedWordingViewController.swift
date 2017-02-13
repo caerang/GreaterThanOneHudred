@@ -19,15 +19,75 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
     
     var wordings: [Wording] = []
     
-    var endingTo: String? = nil
+    var myFirstPostingKey: String? = nil
+    var lastPostingKey: String? = nil
     var isPostExistWillRead = true
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.wordingTableView.register(UINib(nibName: "WordingTableViewCell", bundle: nil), forCellReuseIdentifier: "wordingCell")
+        self.wordingTableView.refreshControl = refreshControl
+        self.refreshControl.addTarget(self, action: #selector(handleDidPullDown), for: .valueChanged)
         retrivePostings()
+    }
+    
+    func handleDidPullDown() {
+        self.refreshControl.endRefreshing()
+        
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        
+        if let firstPostingKey = self.myFirstPostingKey {
+            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryStarting(atValue: firstPostingKey)
+            
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                var postLinks = Array(snapshot.children.reversed())
+                var buf: [Wording] = []
+                
+                _ = postLinks.remove(at: postLinks.count - 1)
+                
+                if 0 != postLinks.count  {
+                    if let nextFirstPosting = postLinks[postLinks.count - 1] as? FIRDataSnapshot {
+                        self.myFirstPostingKey = nextFirstPosting.key
+                    }
+                }
+                else {
+                    return
+                }
+                
+                let postCountWillRead = postLinks.count
+                var postCountDidRead = 0
+                
+                for i in 0 ..< postLinks.count {
+                    if let postLink = postLinks[i] as? FIRDataSnapshot {
+                        let refPost = FIRDatabase.database().reference().child("\(DbConsts.Postings)").child(postLink.key)
+                        
+                        refPost.observeSingleEvent(of: .value, with: { (snapshotPost) in
+                            if let post = self.convertWording(from: snapshotPost) {
+                                buf.append(post)
+                            }
+                            
+                            postCountDidRead = postCountDidRead + 1
+                            
+                            if postCountWillRead == postCountDidRead {
+                                buf.sort { $0.timestamp!.compare($1.timestamp!) == .orderedDescending }
+                                self.wordings.insert(contentsOf: buf, at: 0)
+                                buf.removeAll()
+                                
+                                
+                                DispatchQueue.main.async {
+                                    self.wordingTableView.reloadData()
+                                }
+                            }
+                        })
+                    }
+                }
+            })
+        }
     }
     
     func retrivePostings() {
@@ -38,7 +98,7 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
             return
         }
         
-        if let endingTo = self.endingTo {
+        if let endingTo = self.lastPostingKey {
             let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
             runQueryRetrievePostings(query: ref)
         }
@@ -54,7 +114,7 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
             var buf: [Wording] = []
             if postLinks.count > Int(self.tableRowCount) {
                 if let endSnapshot = postLinks.remove(at: postLinks.count - 1) as? FIRDataSnapshot {
-                    self.endingTo = endSnapshot.key
+                    self.lastPostingKey = endSnapshot.key
                 }
             }
             else {
@@ -67,6 +127,10 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
             for i in 0 ..< postLinks.count {
                 if let postLink = postLinks[i] as? FIRDataSnapshot {
                     let refPost = FIRDatabase.database().reference().child("\(DbConsts.Postings)").child(postLink.key)
+                    
+                    if nil == self.myFirstPostingKey {
+                        self.myFirstPostingKey = postLink.key
+                    }
                     
                     refPost.observeSingleEvent(of: .value, with: {
                         (snapshotPost) in

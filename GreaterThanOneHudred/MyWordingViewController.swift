@@ -19,7 +19,7 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var wordings: [Wording] = []
     
-    var endingTo: String? = nil
+    var lastPostingKey: String? = nil
     var isPostExistWillRead = true
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
             return
         }
         
-        if let endingTo = self.endingTo {
+        if let endingTo = self.lastPostingKey {
             let ref = FIRDatabase.database().reference().child("\(DbConsts.UserPostings)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
             runQueryRetrievePostings(query: ref)
         }
@@ -71,7 +71,7 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
             var buf: [Wording] = []
             if postLinks.count > Int(self.tableRowCount) {
                 if let endSnapshot = postLinks.remove(at: postLinks.count - 1) as? FIRDataSnapshot {
-                    self.endingTo = endSnapshot.key
+                    self.lastPostingKey = endSnapshot.key
                 }
             }
             else {

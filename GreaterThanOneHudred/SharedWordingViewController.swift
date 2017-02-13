@@ -20,8 +20,6 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
     var wordings: [Wording] = []
     
     var endingTo: String? = nil
-    var postCountWillRead = 0
-    var postCountDidRead = 0
     var isPostExistWillRead = true
     
     override func viewDidLoad() {
@@ -63,7 +61,8 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
                 self.isPostExistWillRead = false
             }
             
-            self.postCountWillRead = postLinks.count
+            let postCountWillRead = postLinks.count
+            var postCountDidRead = 0
             
             for i in 0 ..< postLinks.count {
                 if let postLink = postLinks[i] as? FIRDataSnapshot {
@@ -75,13 +74,11 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
                             buf.append(post)
                         }
                         
-                        self.postCountDidRead = self.postCountDidRead + 1
+                        postCountDidRead = postCountDidRead + 1
                         
-                        if self.postCountWillRead == self.postCountDidRead {
+                        if postCountWillRead == postCountDidRead {
                             buf.sort { $0.timestamp!.compare($1.timestamp!) == .orderedDescending }
                             self.wordings.append(contentsOf: buf)
-                            self.postCountWillRead = 0
-                            self.postCountDidRead = 0
                             buf.removeAll()
                             
                             DispatchQueue.main.async {

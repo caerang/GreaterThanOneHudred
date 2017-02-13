@@ -20,8 +20,6 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     var wordings: [Wording] = []
     
     var endingTo: String? = nil
-    var postCountWillRead = 0
-    var postCountDidRead = 0
     var isPostExistWillRead = true
     
     override func viewDidLoad() {
@@ -58,12 +56,10 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if let endingTo = self.endingTo {
-//            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
             let ref = FIRDatabase.database().reference().child("\(DbConsts.UserPostings)").child(uid).queryOrderedByKey().queryEnding(atValue: endingTo).queryLimited(toLast: self.tableRowCount + 1)
             runQueryRetrievePostings(query: ref)
         }
         else {
-//            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryLimited(toLast: self.tableRowCount + 1)
             let ref = FIRDatabase.database().reference().child("\(DbConsts.UserPostings)").child(uid).queryLimited(toLast: self.tableRowCount + 1)
             runQueryRetrievePostings(query: ref)
         }
@@ -82,7 +78,8 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.isPostExistWillRead = false
             }
             
-            self.postCountWillRead = postLinks.count
+            let postCountWillRead = postLinks.count
+            var postCountDidRead = 0
             
             for i in 0 ..< postLinks.count {
                 if let postLink = postLinks[i] as? FIRDataSnapshot {
@@ -94,13 +91,11 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
                             buf.append(post)
                         }
                         
-                        self.postCountDidRead = self.postCountDidRead + 1
+                        postCountDidRead = postCountDidRead + 1
                         
-                        if self.postCountWillRead == self.postCountDidRead {
+                        if postCountWillRead == postCountDidRead {
                             buf.sort { $0.timestamp!.compare($1.timestamp!) == .orderedDescending }
                             self.wordings.append(contentsOf: buf)
-                            self.postCountWillRead = 0
-                            self.postCountDidRead = 0
                             buf.removeAll()
                             
                             DispatchQueue.main.async {

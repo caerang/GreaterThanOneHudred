@@ -23,6 +23,7 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
     var lastPostingKey: String? = nil
     var isPostExistWillRead = true
     var refreshControl = UIRefreshControl()
+    var myIsViewLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,15 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
         self.wordingTableView.refreshControl = refreshControl
         self.refreshControl.addTarget(self, action: #selector(handleDidPullDown), for: .valueChanged)
         retrivePostings()
+        
+        self.myIsViewLoaded = true
     }
     
     func viewDidUnloaded() {
-        wordings.removeAll()
-        self.wordingTableView.reloadData()
+        if self.myIsViewLoaded {
+            wordings.removeAll()
+            self.wordingTableView.reloadData()
+        }
     }
     
     func resetView() {

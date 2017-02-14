@@ -102,6 +102,11 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.isPostExistWillRead = false
             }
             
+            if 0 == postLinks.count {
+                self.hideActivityIndicator()
+                return
+            }
+            
             let postCountWillRead = postLinks.count
             var postCountDidRead = 0
             
@@ -134,7 +139,10 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func reloadWordings() {
         self.wordingTableView.reloadData()
-        
+        hideActivityIndicator()
+    }
+    
+    func hideActivityIndicator() {
         if self.myIsPostDidReadFirstTime {
             self.myIsPostDidReadFirstTime = false
             self.activityIndicator.stopAnimating()

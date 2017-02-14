@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SharedWordingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SharedWordingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeedViewProtocol {
     @IBOutlet weak var wordingTableView: UITableView!
     
     let tableRowCount: UInt = 3
@@ -31,6 +31,15 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
         self.wordingTableView.register(UINib(nibName: "WordingTableViewCell", bundle: nil), forCellReuseIdentifier: "wordingCell")
         self.wordingTableView.refreshControl = refreshControl
         self.refreshControl.addTarget(self, action: #selector(handleDidPullDown), for: .valueChanged)
+        retrivePostings()
+    }
+    
+    func viewDidUnloaded() {
+        wordings.removeAll()
+        self.wordingTableView.reloadData()
+    }
+    
+    func resetView() {
         retrivePostings()
     }
     

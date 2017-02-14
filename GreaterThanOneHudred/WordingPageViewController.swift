@@ -30,6 +30,8 @@ class WordingPageViewController: UIPageViewController, UIScrollViewDelegate {
                 SharedWordingViewController(nibName: "SharedWordingViewController", bundle: nil)]
     }()
     
+    var myIsFirstTimeViewAppeared = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,6 +68,19 @@ class WordingPageViewController: UIPageViewController, UIScrollViewDelegate {
         setupSubViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if !self.myIsFirstTimeViewAppeared {
+            for vc in self.orderedViewControllers {
+                if let fvp = vc as? FeedViewProtocol {
+                    fvp.resetView()
+                }
+            }
+        }
+        else {
+            self.myIsFirstTimeViewAppeared = false
+        }
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.addButton.isHidden = true
     }
@@ -80,6 +95,11 @@ class WordingPageViewController: UIPageViewController, UIScrollViewDelegate {
     }
     
     func unwindToTitlePage() {
+        for vc in self.orderedViewControllers {
+            if let fvp = vc as? FeedViewProtocol {
+                fvp.viewDidUnloaded()
+            }
+        }
         performSegue(withIdentifier: "windToTitlePage", sender: self)
     }
     
@@ -101,7 +121,7 @@ class WordingPageViewController: UIPageViewController, UIScrollViewDelegate {
     
     func handleLogoutButton() {
         LoginManager.sharedInstance.logout()
-        performSegue(withIdentifier: "windToTitlePage", sender: self)
+        unwindToTitlePage()
     }
     
     func handleAddButton() {

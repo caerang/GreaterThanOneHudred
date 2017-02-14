@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class MyWordingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyWordingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeedViewProtocol {
     @IBOutlet weak var wordingTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -24,6 +24,8 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     var isPostExistWillRead = true
     var myIsPostDidReadFirstTime = true
     
+    var myUpdatingObserverQuery: FIRDatabaseQuery?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,13 +37,29 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if !self.activityIndicator.isHidden {
+            self.activityIndicator.startAnimating()
+        }
+    }
+    
+    func viewDidUnloaded() {
+        self.myIsPostDidReadFirstTime = true
+        self.activityIndicator.isHidden = false
+        self.myUpdatingObserverQuery?.removeAllObservers()
+        wordings.removeAll()
+        self.wordingTableView.reloadData()
+    }
+    
+    func resetView() {
         self.activityIndicator.startAnimating()
+        observeUpdates()
+        retrivePostings()
     }
     
     func observeUpdates() {
-        let ref = FIRDatabase.database().reference().child("\(DbConsts.Postings)").queryOrdered(byChild: "timestamp").queryStarting(atValue: Date().timeIntervalSince1970)
+        self.myUpdatingObserverQuery = FIRDatabase.database().reference().child("\(DbConsts.Postings)").queryOrdered(byChild: "timestamp").queryStarting(atValue: Date().timeIntervalSince1970)
         
-        ref.observe(.childAdded, with: { (snapshot) in
+        self.myUpdatingObserverQuery?.observe(.childAdded, with: { (snapshot) in
             if let wording = self.convertWording(from: snapshot) {
                 if FIRAuth.auth()?.currentUser?.uid == wording.user {
                     self.wordings.insert(wording, at: 0)

@@ -34,6 +34,7 @@
 		DBBCC42D1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42C1E1CDB2B00868DC9 /* KeychainItemAccessibility.swift */; };
 		DBBCC42F1E1CDB3800868DC9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */; };
 		DBC51D611E480B5500E76AE0 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC51D601E480B5500E76AE0 /* AccountSettingViewController.swift */; };
+		DBC51D761E5293BF00E76AE0 /* FeedViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC51D751E5293BF00E76AE0 /* FeedViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		DBBCC42E1E1CDB3800868DC9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		DBBCC4301E1CDB4500868DC9 /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKeychainWrapper.h; sourceTree = "<group>"; };
 		DBC51D601E480B5500E76AE0 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
+		DBC51D751E5293BF00E76AE0 /* FeedViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				DB2FF52E1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift */,
 				DB1043BA1E40D3E000699AE1 /* DbConsts.swift */,
+				DBC51D751E5293BF00E76AE0 /* FeedViewProtocol.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				DB2BC5001E1F7A1A008D51E7 /* RequestUserInfoPageViewController.swift in Sources */,
 				DB2FF52F1E1A948F005215C1 /* UITextFieldSingleLineProtocol.swift in Sources */,
 				DB805D041E30AA630049CE42 /* WordingPageViewController.swift in Sources */,
+				DBC51D761E5293BF00E76AE0 /* FeedViewProtocol.swift in Sources */,
 				DB1043BB1E40D3E000699AE1 /* DbConsts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

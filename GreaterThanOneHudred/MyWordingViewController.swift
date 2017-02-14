@@ -11,6 +11,7 @@ import Firebase
 
 class MyWordingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var wordingTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let tableRowCount: UInt = 3
     let WordingColors = [UIColor(red: 222.0/255.0, green: 30.0/255.0, blue: 16.0/255.0, alpha: 1.0),
@@ -21,6 +22,7 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var lastPostingKey: String? = nil
     var isPostExistWillRead = true
+    var myIsPostDidReadFirstTime = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,10 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
         
         observeUpdates()
         retrivePostings()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.activityIndicator.startAnimating()
     }
     
     func observeUpdates() {
@@ -99,13 +105,23 @@ class MyWordingViewController: UIViewController, UITableViewDelegate, UITableVie
                             buf.removeAll()
                             
                             DispatchQueue.main.async {
-                                self.wordingTableView.reloadData()
+                                self.reloadWordings()
                             }
                         }
                     })
                 }
             }
         })
+    }
+    
+    func reloadWordings() {
+        self.wordingTableView.reloadData()
+        
+        if self.myIsPostDidReadFirstTime {
+            self.myIsPostDidReadFirstTime = false
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
     }
     
     func convertWording(from snapshot: FIRDataSnapshot) -> Wording? {

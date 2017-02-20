@@ -94,7 +94,9 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
                                 
                                 
                                 DispatchQueue.main.async {
-                                    self.wordingTableView.reloadData()
+                                    if nil != self.wordingTableView {
+                                        self.wordingTableView.reloadData()
+                                    }
                                 }
                             }
                         })
@@ -160,7 +162,9 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
                             buf.removeAll()
                             
                             DispatchQueue.main.async {
-                                self.wordingTableView.reloadData()
+                                if nil != self.wordingTableView {
+                                   self.wordingTableView.reloadData()
+                                }
                             }
                         }
                     })

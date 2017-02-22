@@ -56,54 +56,65 @@ class SharedWordingViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         if let firstPostingKey = self.myFirstPostingKey {
-            let ref = FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryStarting(atValue: firstPostingKey)
+            runQueryRetrievePostingsRecently(query: FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey().queryStarting(atValue: firstPostingKey))
+        }
+        else {
+            runQueryRetrievePostingsRecently(query: FIRDatabase.database().reference().child("\(DbConsts.Timelines)").child(uid).queryOrderedByKey())
+        }
+    }
+    
+    func runQueryRetrievePostingsRecently(query: FIRDatabaseQuery) {
+        query.observeSingleEvent(of: .value, with: { (snapshot) in
+            var postLinks = Array(snapshot.children.reversed())
+            var buf: [Wording] = []
             
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                var postLinks = Array(snapshot.children.reversed())
-                var buf: [Wording] = []
-                
+            guard 0 < postLinks.count else {
+                return
+            }
+            
+            if 1 < postLinks.count {
                 _ = postLinks.remove(at: postLinks.count - 1)
-                
-                if 0 != postLinks.count  {
-                    if let nextFirstPosting = postLinks[postLinks.count - 1] as? FIRDataSnapshot {
-                        self.myFirstPostingKey = nextFirstPosting.key
-                    }
+            }
+            
+            if 0 != postLinks.count  {
+                if let nextFirstPosting = postLinks[postLinks.count - 1] as? FIRDataSnapshot {
+                    self.myFirstPostingKey = nextFirstPosting.key
                 }
-                else {
-                    return
-                }
-                
-                let postCountWillRead = postLinks.count
-                var postCountDidRead = 0
-                
-                for i in 0 ..< postLinks.count {
-                    if let postLink = postLinks[i] as? FIRDataSnapshot {
-                        let refPost = FIRDatabase.database().reference().child("\(DbConsts.Postings)").child(postLink.key)
+            }
+            else {
+                return
+            }
+            
+            let postCountWillRead = postLinks.count
+            var postCountDidRead = 0
+            
+            for i in 0 ..< postLinks.count {
+                if let postLink = postLinks[i] as? FIRDataSnapshot {
+                    let refPost = FIRDatabase.database().reference().child("\(DbConsts.Postings)").child(postLink.key)
+                    
+                    refPost.observeSingleEvent(of: .value, with: { (snapshotPost) in
+                        if let post = self.convertWording(from: snapshotPost) {
+                            buf.append(post)
+                        }
                         
-                        refPost.observeSingleEvent(of: .value, with: { (snapshotPost) in
-                            if let post = self.convertWording(from: snapshotPost) {
-                                buf.append(post)
-                            }
+                        postCountDidRead = postCountDidRead + 1
+                        
+                        if postCountWillRead == postCountDidRead {
+                            buf.sort { $0.timestamp!.compare($1.timestamp!) == .orderedDescending }
+                            self.wordings.insert(contentsOf: buf, at: 0)
+                            buf.removeAll()
                             
-                            postCountDidRead = postCountDidRead + 1
                             
-                            if postCountWillRead == postCountDidRead {
-                                buf.sort { $0.timestamp!.compare($1.timestamp!) == .orderedDescending }
-                                self.wordings.insert(contentsOf: buf, at: 0)
-                                buf.removeAll()
-                                
-                                
-                                DispatchQueue.main.async {
-                                    if nil != self.wordingTableView {
-                                        self.wordingTableView.reloadData()
-                                    }
+                            DispatchQueue.main.async {
+                                if nil != self.wordingTableView {
+                                    self.wordingTableView.reloadData()
                                 }
                             }
-                        })
-                    }
+                        }
+                    })
                 }
-            })
-        }
+            }
+        })
     }
     
     func retrivePostings() {
